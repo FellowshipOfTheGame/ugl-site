@@ -7,6 +7,7 @@ import { css } from "../../styled-system/css";
 import { bgImgDefaults, flexCenter } from "../styles/pieces/common.piece";
 import WhatUglOffer from "./Landing.page/WhatUglOffer.section";
 import SponsorsSection from "./Landing.page/Sponsors.sections";
+import LocationSection from "./Landing.page/Location.section";
 
 
 const LandingPage = () => {
@@ -29,6 +30,7 @@ const LandingPage = () => {
             </section>
             <WhatUglOffer />
             <SponsorsSection />
+            <LocationSection />
         </main>
     );
 };
