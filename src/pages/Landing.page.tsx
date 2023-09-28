@@ -6,6 +6,7 @@ import '../assets/images/foto_palestra_02.webp';
 import { css } from "../../styled-system/css";
 import { bgImgDefaults, flexCenter } from "../styles/pieces/common.piece";
 import WhatUglOffer from "./Landing.page/WhatUglOffer.section";
+import SponsorsSection from "./Landing.page/Sponsors.sections";
 
 
 const LandingPage = () => {
@@ -27,6 +28,7 @@ const LandingPage = () => {
                 })}/> */}
             </section>
             <WhatUglOffer />
+            <SponsorsSection />
         </main>
     );
 };
