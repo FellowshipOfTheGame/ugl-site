@@ -38,7 +38,7 @@ const supporters = [
 
 
 const _LogoRow = (props : {
-    height : string,
+    height : any,
     list : {img: string, alt: string}[]
     class? : string
 }) => {
@@ -54,7 +54,7 @@ const _LogoRow = (props : {
                     flexDir: 'row',
                     borderRight: '1px solid black' ,
                 })}>
-                    <For each={props.list}>{ (sponsor, i) => 
+                    <For each={props.list}>{ (sponsor) => 
                         <td class={css({
                             ...flexCenter,
 
@@ -63,13 +63,17 @@ const _LogoRow = (props : {
                             borderLeft: '1px solid black',
 
                             h: props.height,
-                            w: '100%',
-                            p: '10px',
+                            w: '90%',
+                            p: '5px',   
+
+                            overflow: 'hidden',
                         })}>
                             <img 
                                 src={sponsor.img} 
                                 alt={sponsor.alt} 
-                                class={css({ h: '100%' })} 
+                                class={css({
+                                    maxH: props.height,
+                                })} 
                             />
                         </td>
                     }</For>
@@ -87,6 +91,7 @@ const SponsorsSection = () => {
             flexDir: 'column',
             w: '100%',
             minH: '638px',
+            minW: '400px',
             p: '10px 20px',
         })}>
             <h2 class={css({
@@ -100,7 +105,7 @@ const SponsorsSection = () => {
                 PATROCINADORES
             </h2>
 
-            <_LogoRow list={sponsors} height="250px" class={
+            <_LogoRow list={sponsors} height={{base: '100px', md: '200px', lg: '250px'}} class={
                 css({mb: '50px'})
             }/>
 
@@ -114,7 +119,7 @@ const SponsorsSection = () => {
                 APOIO
             </h2>
 
-            <_LogoRow list={supporters} height="175px" class={
+            <_LogoRow list={supporters} height={{base: '75px', md: '150px', lg: '175px'}} class={
                 css({mb: '30px'})
             }/>
 
