@@ -5,6 +5,7 @@ import Layout from "./Layout";
 
 import './typefonts.tsx';
 import { css } from "../styled-system/css/css";
+import GuestsPage from "./pages/Guests.page.tsx";
 
 
 
@@ -19,6 +20,7 @@ function App() {
                 <Routes>
                     <Route path='/' component={Layout}>
                         <Route path='/' component={LandingPage} />
+                        <Route path='/convidados' component={GuestsPage} />
                     </Route>
                 </Routes>
             </Router>

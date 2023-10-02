@@ -20,11 +20,17 @@ import { flexCenter } from "../../styles/pieces/common.piece";
 
 
 const sponsors = [
-    {img: gorpakiLogo, alt: ''},
-    {img: norbLogo, alt: ''},
-    {img: wonamiLogo, alt: ''},
-    {img: pushStartLogo, alt: ''},
+    // {img: gorpakiLogo, alt: ''},
+    // {img: norbLogo, alt: ''},
+    // {img: wonamiLogo, alt: ''},
+    // {img: pushStartLogo, alt: ''},
     {img: disponivel, alt: ''},
+    {img: disponivel, alt: ''},
+    {img: disponivel, alt: ''},
+    {img: disponivel, alt: ''},
+    {img: disponivel, alt: ''},
+    {img: disponivel, alt: ''},
+
 ];
 
 

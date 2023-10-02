@@ -1,13 +1,13 @@
-import EyeCatcherSection from "./Landing.page/EyeCatcher.section";
-import IndustryNamesSection from "./Landing.page/IndustryNames.section";
-import RegisterFormSection from "./Landing.page/RegisterForms.section";
+import EyeCatcherSection from "../sections/Landing.page/EyeCatcher.section";
+import IndustryNamesSection from "../sections/Landing.page/IndustryNames.section";
+import RegisterFormSection from "../sections/Landing.page/RegisterForms.section";
 
 import '../assets/images/foto_palestra_02.webp';
 import { css } from "../../styled-system/css";
 import { bgImgDefaults, flexCenter } from "../styles/pieces/common.piece";
-import WhatUglOffer from "./Landing.page/WhatUglOffer.section";
-import SponsorsSection from "./Landing.page/Sponsors.sections";
-import LocationSection from "./Landing.page/Location.section";
+import WhatUglOffer from "../sections/Landing.page/WhatUglOffer.section";
+import SponsorsSection from "../sections/Landing.page/Sponsors.sections";
+import LocationSection from "../sections/Landing.page/Location.section";
 
 
 const LandingPage = () => {

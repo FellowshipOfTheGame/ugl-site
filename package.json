@@ -7,9 +7,11 @@
     "dev": "vite",
     "prepare": "panda codegen",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "quick": "clear && npm run prepare && npm run dev"
   },
   "dependencies": {
+    "@fontsource-variable/playfair-display": "^5.0.14",
     "@fontsource/barlow": "^5.0.8",
     "@solidjs/router": "^0.8.3",
     "solid-js": "^1.7.8"
