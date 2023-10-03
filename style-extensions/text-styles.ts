@@ -101,8 +101,8 @@ const textStyles = defineTextStyles({
         description:
             "This text style is used in the name of the guests in the guests page.",
         value: {
-            fontFamily: "'Playfair Display Variable', sans-serif",
-            fontWeight: "600",
+            fontFamily: "'Playfair Display', sans-serif",
+            fontWeight: "700",
             fontSize: "25px",
         },
     },

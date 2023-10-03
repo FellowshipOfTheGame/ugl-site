@@ -11,8 +11,8 @@
     "quick": "clear && npm run prepare && npm run dev"
   },
   "dependencies": {
-    "@fontsource-variable/playfair-display": "^5.0.14",
     "@fontsource/barlow": "^5.0.8",
+    "@fontsource/playfair-display": "^5.0.13",
     "@solidjs/router": "^0.8.3",
     "solid-js": "^1.7.8"
   },
