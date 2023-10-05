@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import { css } from "../../styled-system/css";
-import ugl_logo from "../assets/logos/ugl-logos/main-logos/ugl-logo-01.webp";
+import ugl_logo from "../assets/logos/ugl-logos/main-logos/ugl-white-01.webp";
 import { Accessor, Show, createEffect, createSignal } from "solid-js";
 import useWindowDimensions from "../assets/utils/hooks";
 import barsIcons from "../assets/vectors/bars.svg";
@@ -136,19 +136,19 @@ const _NavList = () => {
                 <A href='/convidados'> CONVIDADOS </A>
             </li>
             <li class={AppBarLiClass}>
-                <a href='#'> EXPOSIÇÃO DE JOGOS </a>
+                <A href='/#exposicao-de-jogos'> EXPOSIÇÃO </A>
             </li>
-            <li class={AppBarLiClass}>
+            {/* <li class={AppBarLiClass}>
                 <a href='#'> PROGRAMAÇÃO </a>
-            </li>
+            </li> */}
             <li class={AppBarLiClass}>
                 <a href='#'> IMPRENSA </a>
             </li>
             <li class={AppBarLiClass}>
-                <a href='#'> APOIO </a>
+                <A href='/apoio'> APOIO </A>
             </li>
             <li class={AppBarLiClass}>
-                <a href='#'> SOBRE </a>
+                <A href='/sobre-nos'> SOBRE </A>
             </li>
         </ul>
     );

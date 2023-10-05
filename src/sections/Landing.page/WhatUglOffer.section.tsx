@@ -187,6 +187,7 @@ const _Video = () => {
 const WhatUglOffer = () => {
     return (
         <section
+            id='exposicao-de-jogos'
             class={css({
                 ...flexCenter,
                 flexDir: "column",

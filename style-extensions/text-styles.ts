@@ -86,6 +86,27 @@ const textStyles = defineTextStyles({
         },
     },
 
+    barlowPSmall: {
+        description: "Use this style in common text.",
+        value: {
+            fontFamily: "Barlow, sans-serif",
+            fontWeight: "500",
+            fontSize: "16px",
+            lineHeight: "28.8px",
+            letterSpacing: "0.05em",
+        },
+    },
+
+    barlowPThin: {
+        description: "Use this style in common text.",
+        value: {
+            fontFamily: "Barlow, sans-serif",
+            fontWeight: "400",
+            fontSize: "18px",
+            lineHeight: "32px",
+        },
+    },
+
     barlowStrong: {
         description: "Use this style in a strong text.",
         value: {

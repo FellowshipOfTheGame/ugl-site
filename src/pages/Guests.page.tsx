@@ -8,10 +8,11 @@ import {
 import { circle, grid } from "../../styled-system/patterns";
 import { css } from "../../styled-system/css";
 import { flexCenter } from "../styles/pieces/common.piece";
+import { Transition, TransitionGroup } from "solid-transition-group";
 
 const _Socials = (props: {
-    socials?: { social: SocialNetwork; link: string }[],
-    guestName: string,
+    socials?: { social: SocialNetwork; link: string }[];
+    guestName: string;
 }) => {
     const size = { base: "35px", md: "40px", xl: "45px", "2xl": "50px" };
     return (
@@ -136,20 +137,24 @@ const _YearSection = (props: { year: string; guests: GuestType[] }) => {
 
 const GuestsPage = () => {
     return (
-        <main>
-            <div
-                class={css({
-                    ...flexCenter,
-                    flexDir: "column",
-                    p: { base: "25px 10px", md: "50px 10px" },
-                    minW: "400px",
-                })}
-            >
-                <For each={guests_per_year}>
-                    {(y) => <_YearSection year={y.year} guests={y.guests} />}
-                </For>
-            </div>
-        </main>
+        <Transition name='fade-in'>
+            <main>
+                <div
+                    class={css({
+                        ...flexCenter,
+                        flexDir: "column",
+                        p: { base: "25px 10px", md: "50px 10px" },
+                        minW: "400px",
+                    })}
+                >
+                    <For each={guests_per_year}>
+                        {(y) => (
+                            <_YearSection year={y.year} guests={y.guests} />
+                        )}
+                    </For>
+                </div>
+            </main>
+        </Transition>
     );
 };
 
