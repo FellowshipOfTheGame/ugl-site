@@ -1,4 +1,5 @@
 import { css } from "../../styled-system/css";
+import images from '../data/galery-images.data';
 
 const _Column = () => {}
 
@@ -11,8 +12,10 @@ function splitImages (originalArray : string[]) {
     return [firstPart, secondPart];
 }
 
-const GalleryPage = () => {
+const [imagesLeft, imagesRight] = splitImages(await Promise.all(images));
 
+const GalleryPage = () => {
+    
 
     return (
         <main>
