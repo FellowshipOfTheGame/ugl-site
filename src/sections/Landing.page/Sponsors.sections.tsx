@@ -2,10 +2,10 @@ import { For } from "solid-js";
 import { css } from "../../../styled-system/css";
 
 
-import gorpakiLogo from '../../assets/logos/sponsors/gorpaki-game-studio.webp';
-import norbLogo from '../../assets/logos/sponsors/norb.webp';
-import wonamiLogo from '../../assets/logos/sponsors/wonami.webp';
-import pushStartLogo from '../../assets/logos/sponsors/PushStart500x500.webp';
+// import gorpakiLogo from '../../assets/logos/sponsors/gorpaki-game-studio.webp';
+// import norbLogo from '../../assets/logos/sponsors/norb.webp';
+// import wonamiLogo from '../../assets/logos/sponsors/wonami.webp';
+// import pushStartLogo from '../../assets/logos/sponsors/PushStart500x500.webp';
 
 import dumativaLogo from '../../assets/logos/supporters/dumativa.webp';
 import icmcLogo from '../../assets/logos/supporters/LOGO-ICMC-500x500.webp';

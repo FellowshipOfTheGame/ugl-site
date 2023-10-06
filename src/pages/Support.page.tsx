@@ -1,15 +1,11 @@
 import { css } from "../../styled-system/css";
 import {
-    center,
     divider,
-    flex,
-    hstack,
     vstack,
 } from "../../styled-system/patterns";
 
 import photo from "../assets/images/foto_palestra_03.webp";
 import PointyA from "../components/PointyA";
-import { pointyClicable } from "../styles/recipes/clicables.recipe";
 
 const SupportPage = () => {
     return (

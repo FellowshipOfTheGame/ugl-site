@@ -14,11 +14,17 @@ const WIDTH_AT_BAR_BREAK = 1280;
 const AppBarLiClass = css({
     marginRight: "20px",
     padding: "5px",
-    transition: "color .4s ease 0s",
+    transition: "all .2s ease",
     textTransform: "uppercase",
     _hover: {
         color: "#efe1b6",
         cursor: "pointer",
+        transform: 'scale(1.1)',
+    },
+    "@media(min-width: 1280px)": {
+        w: '100%',
+        // minH: '50px',
+        p: '5px',
     },
 });
 
@@ -43,9 +49,9 @@ const _DropDownMenu = (props: { active: Accessor<boolean> }) => {
                     alignItems: "center",
                     p: "25px",
                     overflow: "hidden",
-                    h: "0",
+                    // h: "0",
                     transition: "all .4s ease",
-                    h: '500px',
+                    h: '400px',
                 })}
             >
                 <div
@@ -63,7 +69,7 @@ const _DropDownMenu = (props: { active: Accessor<boolean> }) => {
     );
 };
 
-const _Bars = (props: { sig?: () => void }) => {
+const _Bars = (/*props: { sig?: () => void }*/) => {
     const [activeDropDown, setActiveDropDown] = createSignal<boolean>(false);
 
     return (
@@ -96,6 +102,7 @@ const _Bars = (props: { sig?: () => void }) => {
                     right: "0",
                     overflow: "visible",
                     zIndex: "9",
+                    
                 })}
             >
                 <_DropDownMenu active={activeDropDown} />
@@ -109,21 +116,22 @@ const _NavList = () => {
         <ul
             class={css({
                 display: "flex",
-                flexDir: {
-                    base: "column",
-                    "@media (min-width: 1280px)": "row", // NOTE (b): this is fine. 🔥☕ 
-                },
+                flexDir: 
+                     "column",
+            
+                "@media (min-width: 1280px)": {flexDir: "row"}, // NOTE (b): this is fine. 🔥☕ 
+
                 // borderBottom: {
                 //     base: "1px solid gray",
                 //     "@media (min-width: 1280px)": "0", // NOTE (b): this is fine. 🔥☕
                 // },
-                position: {
-                    base: "absolute",
-                    "@media (min-width: 1280px)": "inherit", // NOTE (b): this is fine. 🔥☕
-                },
-                "@media (min-width: 1280px)": {
+                position:  "absolute",
+                    // NOTE (b): this is fine. 🔥☕
+                
+                "@media(min-width: 1280px)": {
                     top: "0",
                     right: "0",
+                    position : "inherit",
                 },
                 listStyle: "none",
                 padding: 0,
@@ -142,7 +150,7 @@ const _NavList = () => {
                 <a href='#'> PROGRAMAÇÃO </a>
             </li> */}
             <li class={AppBarLiClass}>
-                <a href='#'> IMPRENSA </a>
+                <A href='/galeria'> GALERIA </A>
             </li>
             <li class={AppBarLiClass}>
                 <A href='/apoio'> APOIO </A>

@@ -8,7 +8,7 @@ import {
 import { circle, grid } from "../../styled-system/patterns";
 import { css } from "../../styled-system/css";
 import { flexCenter } from "../styles/pieces/common.piece";
-import { Transition, TransitionGroup } from "solid-transition-group";
+import { Transition } from "solid-transition-group";
 
 const _Socials = (props: {
     socials?: { social: SocialNetwork; link: string }[];
