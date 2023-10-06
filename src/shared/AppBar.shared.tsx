@@ -21,10 +21,11 @@ const AppBarLiClass = css({
         cursor: "pointer",
         transform: 'scale(1.1)',
     },
-    "@media(min-width: 1280px)": {
-        w: '100%',
-        // minH: '50px',
-        p: '5px',
+    "@media(max-width: 1279px)": {
+        minW: '100%',
+        minH: '50px',
+        p: '10px',
+        marginRight: "10px",
     },
 });
 
