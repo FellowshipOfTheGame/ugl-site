@@ -31,7 +31,7 @@ import joaoMBeraldoPhoto from "../assets/guests-images/2022/joão-m-beraldo.webp
 
 export type YearType = "2023" | "2022" | "2021" | "2020";
 export type SocialNetwork = "Instagram" | "LinkedIn";
-export const years: YearType[] = ["2023", "2022", "2021", "2020"];
+export const years: YearType[] = ["2023", "2022"];
 
 export interface GuestType {
     name: string;
