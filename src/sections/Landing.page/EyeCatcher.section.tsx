@@ -5,7 +5,6 @@ import foguinho3 from "../../assets/foguinho/FoGuinho3.webp";
 import { flexCenter, maxSize } from "../../styles/pieces/common.piece";
 import { UGLDate } from "../../utils/constants";
 import { createSignal, onCleanup } from "solid-js";
-import { vstack } from "../../../styled-system/patterns";
 
 const targetDate = new Date(UGLDate);
 

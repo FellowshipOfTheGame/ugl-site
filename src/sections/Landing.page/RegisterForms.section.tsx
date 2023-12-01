@@ -38,7 +38,7 @@ const _TextContent = () => {
                 Preencha o formulário de inscrição para poder 
                 participar do evento e receber todas as novidades!
             </p>
-            <PointyA>
+            <PointyA href='https://forms.gle/7fFJXEn7zEa9NApu6'>
                 Quero preencher
             </PointyA>
         </div>

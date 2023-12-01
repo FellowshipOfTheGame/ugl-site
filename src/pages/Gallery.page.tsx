@@ -1,10 +1,8 @@
-import { For, createEffect, createSignal, onMount } from "solid-js";
+import { For } from "solid-js";
 import { css } from "../../styled-system/css";
 import images from "../data/galery-images.data";
-import { grid, hstack, vstack } from "../../styled-system/patterns";
-import { flexCenter } from "../styles/pieces/common.piece";
+import { hstack } from "../../styled-system/patterns";
 
-const _Column = () => {};
 
 function splitImages(originalArray: string[]) {
     const offset = -1; // NOTE (b): change the offset as needed

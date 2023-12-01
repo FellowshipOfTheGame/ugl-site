@@ -59,7 +59,7 @@ const _Guest = (props: { guestData: GuestType }) => {
                     src={g.img}
                     alt={g.alt ?? `Foto retrato de ${g.name}.`}
                     class={circle({
-                        size: { base: "175px", sm: "200px", md: "225px" },
+                        size: { base: "175px", sm: "200px", md: "225px"},
                         objectFit: "cover",
                         ...flexCenter,
                     })}

@@ -25,6 +25,18 @@ import rennanGonçalvezPhoto from "../assets/guests-images/2022/rennan-goncalvez
 import guilhermeDaCasPhoto from "../assets/guests-images/2022/guilherme-da-cas.webp";
 import joaoMBeraldoPhoto from "../assets/guests-images/2022/joão-m-beraldo.webp";
 
+// Imagens from 2023
+import marioGazziroPhoto from "../assets/guests-images/2023/mario-gazziro.webp";
+import abnerEduardoSilveiraSantosPhoto from "../assets/guests-images/2023/abner-eduardo-silveira-santos.webp";
+import raquelGontijoPhoto from "../assets/guests-images/2023/raquel-gontijo.webp";
+import tiagoMarinoSilvaPhoto from "../assets/guests-images/2023/tiago-marino-silva.webp";
+import joaoVictorRodriguesPhoto from "../assets/guests-images/2023/joao-victor-rodrigues.webp";
+import carolinaDeSaPhoto from '../assets/guests-images/2023/carolina-de-sa.webp';
+import mateusResendePaludettiPhoto from "../assets/guests-images/2023/mateus-resende-paludetti.webp";
+import leonardoTortoroPereiraPhoto from "../assets/guests-images/2023/leonardo-tortoro-pereira.webp";
+import liviaScienzaPhoto from "../assets/guests-images/2023/livia-scienza.webp";
+import danielXimenesPhoto from "../assets/guests-images/2023/daniel-ximenes.webp";
+
 //============================================================================//
 //=================|    Types   |=============================================//
 //============================================================================//
@@ -175,6 +187,66 @@ export const guests: GuestType[] = [
         title: "Ubisoft Singapura",
         years: ["2022"],
         img: joaoMBeraldoPhoto,
+    },
+    {
+        name: "Mário Gazziro",
+        title: "UFABC",
+        years: ["2023"],
+        img: marioGazziroPhoto,
+    },
+    {
+        name: "Abner Eduardo Silveira Santos",
+        title: "Kokku Games",
+        years: ["2023"],
+        img: abnerEduardoSilveiraSantosPhoto,
+    },
+    {
+        name: "Raquel Gontijo",
+        title: "Rogue Snail",
+        years: ["2023"],
+        img: raquelGontijoPhoto,
+    },
+    {
+        name: "Tiago Marino Silva",
+        title: "Flux Games",
+        years: ["2023"],
+        img: tiagoMarinoSilvaPhoto,
+    },
+    {
+        name: "João Victor de Oliveira Rodrigues",
+        title: "Umbu Games",
+        years: ["2023"],
+        img: joaoVictorRodriguesPhoto,
+    },
+    {
+        name: 'Carolina de Sá',
+        title: "Dumativa",
+        years: ['2023'],
+        img: carolinaDeSaPhoto,
+    },
+    {
+        name: "Mateus Resende Paludetti",
+        title: "Black Sauva",
+        years: ["2023"],
+        img: mateusResendePaludettiPhoto,
+    },
+    {
+        name: "Leonardo Tortoro Pereira",
+        title: "ICMC-USP",
+        years: ["2023"],
+        img: leonardoTortoroPereiraPhoto,
+    },
+    {
+        name: "Lívia Scienza",
+        title: "Doutoranda - UFSCAR",
+        years: ["2023"],
+        img: liviaScienzaPhoto,
+    },
+    {
+        name: "Daniel Ximenes",
+        title: "Dumativa",
+        years: ["2023"],
+        img: danielXimenesPhoto,
     },
 ];
 

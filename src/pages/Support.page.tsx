@@ -108,7 +108,7 @@ const SupportPage = () => {
                 <h2 class={css({ textStyle: "barlowH2", mb: '10px'})}>
                     Quero ser um apoiador
                 </h2>
-                <PointyA>
+                <PointyA href="https://forms.gle/ptB6tpBKipQ7eJv59">
                     Apoie o projeto
                 </PointyA>
                 <div class={css({mb: '50px', mt:'10px' })} />
