@@ -6,6 +6,7 @@ import genteChegando from "../assets/guests-images/gente-chegando.webp";
 
 import linkedinIcon from "../assets/icons/linkedin-icon.webp";
 import instagramIcon from "../assets/icons/instagram-icon.webp";
+import xIcon from "../assets/icons/x-icon.png";
 import coconut from "../assets/icons/coconut.webp";
 
 // Images from 2022
@@ -17,7 +18,6 @@ import apoenaHerreroPhoto from "../assets/guests-images/2022/apoena-herrero.webp
 import ivanDGardePhoto from "../assets/guests-images/2022/ivan-d-garde.webp";
 import stefaniaPecorePhoto from "../assets/guests-images/2022/stefania-percore.webp";
 import daniSerranuPhoto from "../assets/guests-images/2022/dani-serranu.webp";
-
 import lucianaGBoldoriniPhoto from "../assets/guests-images/2022/luciana-g-boldorini.webp";
 import ivarPJuniorPhoto from "../assets/guests-images/2022/ivar-p-junior.webp";
 import lisaYTaguchiPhoto from "../assets/guests-images/2022/lisa-y-taguchi.webp";
@@ -37,13 +37,21 @@ import leonardoTortoroPereiraPhoto from "../assets/guests-images/2023/leonardo-t
 import liviaScienzaPhoto from "../assets/guests-images/2023/livia-scienza.webp";
 import danielXimenesPhoto from "../assets/guests-images/2023/daniel-ximenes.webp";
 
+// Imagens from 2024
+import augustoMirandaGarciaPhoto from "../assets/guests-images/2024/augusto-miranda-garcia.jpg";
+import melinaJuraskiPhoto from "../assets/guests-images/2024/melina-juraski.jpg";
+import terriVelmanPhoto from "../assets/guests-images/2024/terri-velman.jpg";
+import fernandoAraujoPhoto from "../assets/guests-images/2024/fernando-araujo.jpg";
+import guilhermeGiacominiPhoto from "../assets/guests-images/2024/guilherme-giacomini.jpg";
+import rafaelGaribPhoto from "../assets/guests-images/2024/rafael-garib.jpeg";
+
 //============================================================================//
 //=================|    Types   |=============================================//
 //============================================================================//
 
-export type YearType = "2023" | "2022" | "2021" | "2020";
-export type SocialNetwork = "Instagram" | "LinkedIn";
-export const years: YearType[] = ["2023", "2022"];
+export type YearType = "2024" | "2023" | "2022" | "2021" | "2020";
+export type SocialNetwork = "X" | "Instagram" | "LinkedIn";
+export const years: YearType[] = ["2024", "2023", "2022"];
 
 export interface GuestType {
     name: string;
@@ -64,6 +72,8 @@ export function getSocialNetLogos(socialNetName: SocialNetwork) {
             return linkedinIcon;
         case "Instagram":
             return instagramIcon;
+        case "X":
+            return xIcon;
         default:
             return coconut;
     }
@@ -78,7 +88,7 @@ export const guests: GuestType[] = [
     {
         name: "EM BREVE",
         title: "Em breve!",
-        years: ["2023"],
+        years: ["2024"],
         img: genteChegando,
         alt: "Imagem contendo o texto estilizado 'tem gente chegando'.",
     },
@@ -191,8 +201,14 @@ export const guests: GuestType[] = [
     {
         name: "Mário Gazziro",
         title: "UFABC",
-        years: ["2023"],
+        years: ["2023", "2024"],
         img: marioGazziroPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://www.linkedin.com/in/mario-gazziro-1a41712a3/",
+            },
+        ],
     },
     {
         name: "Abner Eduardo Silveira Santos",
@@ -232,9 +248,15 @@ export const guests: GuestType[] = [
     },
     {
         name: "Leonardo Tortoro Pereira",
-        title: "ICMC-USP",
-        years: ["2023"],
+        title: "IGCE-UNESP",
+        years: ["2023", "2024"],
         img: leonardoTortoroPereiraPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://www.linkedin.com/in/leotpereira/",
+            },
+        ],
     },
     {
         name: "Lívia Scienza",
@@ -248,6 +270,78 @@ export const guests: GuestType[] = [
         years: ["2023"],
         img: danielXimenesPhoto,
     },
+    {
+        name: "Augusto Miranda Garcia",
+        title: "Afterverse",
+        years: ["2024"],
+        img: augustoMirandaGarciaPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://br.linkedin.com/in/augusto-garcia-6880057a",
+            },
+        ],
+    },
+    {
+        name: "Melina Juraski",
+        title: "Sunblack Game Studio",
+        years: ["2024"],
+        img: melinaJuraskiPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://br.linkedin.com/in/melinajuraski1408/en?trk=public_post_main-feed-card_reshare-text",
+            },
+        ],
+    },
+    {
+        name: "Terri Velman",
+        title: "Indie Dev",
+        years: ["2024"],
+        img: terriVelmanPhoto,
+        socials: [
+            {
+                social: "X",
+                link: "https://x.com/terrivellmann",
+            },
+        ],
+    },
+    {
+        name: "Fernando Araujo",
+        title: "INK-EYE Games",
+        years: ["2024"],
+        img: fernandoAraujoPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://br.linkedin.com/in/fernando-gamedev",
+            },
+        ],
+    },
+    {
+        name: "Guilherme Giacomini",
+        title: "ARVORE Immersive Experiences",
+        years: ["2024"],
+        img: guilhermeGiacominiPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://br.linkedin.com/in/gmgiacomini",
+            },
+        ],
+    },
+    {
+        name: "Rafael Garib",
+        title: "Wildlife",
+        years: ["2024"],
+        img: rafaelGaribPhoto,
+        socials: [
+            {
+                social: "LinkedIn",
+                link: "https://br.linkedin.com/in/rafael-garib-jankauskas-30354856",
+            },
+        ],
+    }
 ];
 
 // NOTE (b): is this the best way to do this? No. Is it peformant? No. Howerver,

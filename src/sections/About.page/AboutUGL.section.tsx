@@ -39,7 +39,7 @@ const AboutUGLSection = () => {
             >
                 A USP Game Link (UGL) é um evento realizado anualmente pelo
                 grupo de extensão da USP São Carlos, Fellowship of The Game
-                (FoG), com foco no desenvolvimento de jogos. Durante o evento,
+                (FoG) e pelo GAMSo (Game, Art, Music and Software), da UFSCar, com foco no desenvolvimento de jogos. Durante o evento,
                 são realizadas mostras de jogos, em especial, dos desenvolvidos
                 pelos alunos da disciplina de{" "}
                 <a

@@ -6,7 +6,7 @@ import "../assets/images/foto_palestra_02.webp";
 import { css } from "../../styled-system/css";
 import { bgImgDefaults, flexCenter } from "../styles/pieces/common.piece";
 import WhatUglOffer from "../sections/Landing.page/WhatUglOffer.section";
-import SponsorsSection from "../sections/Landing.page/Sponsors.sections";
+// import SponsorsSection from "../sections/Landing.page/Sponsors.sections";
 import LocationSection from "../sections/Landing.page/Location.section";
 import CalendarSection from "../sections/Landing.page/Calendar.section";
 
@@ -38,7 +38,7 @@ const LandingPage = () => {
             <IndustryNamesSection />
             <CoolBannerSection />
             <WhatUglOffer />
-            <SponsorsSection />
+            {/* <SponsorsSection /> */}
             <LocationSection />
         </main>
     );
