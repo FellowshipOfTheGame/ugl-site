@@ -29,12 +29,13 @@ const CoolBannerSection = () => {
     );
 };
 
+// NOTE: No register form in 2024 for attendees
 const LandingPage = () => {
     return (
         <main>
             <EyeCatcherSection />
             <CalendarSection />
-            <RegisterFormSection />
+            {/* <RegisterFormSection /> */}
             <IndustryNamesSection />
             <CoolBannerSection />
             <WhatUglOffer />
