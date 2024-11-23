@@ -51,7 +51,7 @@ const _LogoRow = (props: {
                     w: "94%",
                 }) +
                     " " +
-                    props.class ?? ""
+                    props.class
             }
         >
             <thead class={css({ h: "100%", w: "100%" })}>

@@ -1,6 +1,6 @@
 import EyeCatcherSection from "../sections/Landing.page/EyeCatcher.section";
 import IndustryNamesSection from "../sections/Landing.page/IndustryNames.section";
-import RegisterFormSection from "../sections/Landing.page/RegisterForms.section";
+// import RegisterFormSection from "../sections/Landing.page/RegisterForms.section";
 
 import "../assets/images/foto_palestra_02.webp";
 import { css } from "../../styled-system/css";

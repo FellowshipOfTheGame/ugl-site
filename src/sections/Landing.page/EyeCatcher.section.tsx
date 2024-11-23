@@ -50,7 +50,7 @@ const _ClockDisplay = (props: { time: number; title: string }) => {
 
                 textAlign: "center",
                 m: {
-                    base: "1px",
+                    base: "3px",
                     sm: "1px 2px",
                     md: "2px 3px",
                     lg: "2px 4px",
@@ -61,7 +61,6 @@ const _ClockDisplay = (props: { time: number; title: string }) => {
                 lineHeight: fontSizeOffset3,
                 color: "ugl-orange",
                 textStyle: "majorTitle",
-
                 p: "1px",
 
                 minW: {
@@ -124,6 +123,7 @@ const _TimeLeft = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-evenly",
+                    flexDir: {base: 'column', md: 'row'},
                     height: "100%",
                     // padding: {
                     //     base: "15px 5px 20px 5px",
@@ -301,6 +301,7 @@ const _EyeCatcherOverlay = () => {
                         "2xl": "80%",
                     },
                     height: "175px",
+                    display: {base: "none", sm: "flex"},
                 })}
             >
                 <_TimeLeft />
