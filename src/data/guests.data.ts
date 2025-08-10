@@ -49,16 +49,16 @@ import rafaelGaribPhoto from "../assets/guests-images/2024/rafael-garib.jpeg";
 //=================|    Types   |=============================================//
 //============================================================================//
 
-export type YearType = "2024" | "2023" | "2022" | "2021" | "2020";
+export type YearType = "2025" | "2024" | "2023" | "2022" | "2021" | "2020";
 export type SocialNetwork = "X" | "Instagram" | "LinkedIn";
-export const years: YearType[] = ["2024", "2023", "2022"];
+export const years: YearType[] = ["2025","2024", "2023", "2022"];
 
 export interface GuestType {
     name: string;
     title: string;
     years: string[];
     img: string;
-    alt?: string; // NOTE: the text `Foto retrato de {NOME}` será usado se alt for undefined.
+    alt?: string; // NOTE: the text `Foto retrato de {NOME}` will be used if alt is undefined.
     socials?: { social: SocialNetwork; link: string }[];
 }
 
@@ -84,15 +84,13 @@ export function getSocialNetLogos(socialNetName: SocialNetwork) {
 //============================================================================//
 
 export const guests: GuestType[] = [
-    // 2023
     {
-        name: "EM BREVE",
+        name: "Vem Aí!",
         title: "Em breve!",
-        years: ["2024"],
+        years: ["2025"],
         img: genteChegando,
         alt: "Imagem contendo o texto estilizado 'tem gente chegando'.",
     },
-
     // 2022
     {
         name: "Giovanna Franchini",
@@ -198,6 +196,7 @@ export const guests: GuestType[] = [
         years: ["2022"],
         img: joaoMBeraldoPhoto,
     },
+    // 2023
     {
         name: "Mário Gazziro",
         title: "UFABC",
@@ -249,7 +248,7 @@ export const guests: GuestType[] = [
     {
         name: "Leonardo Tortoro Pereira",
         title: "IGCE-UNESP",
-        years: ["2023", "2024"],
+        years: ["2023", "2024", "2025"],
         img: leonardoTortoroPereiraPhoto,
         socials: [
             {
@@ -342,6 +341,7 @@ export const guests: GuestType[] = [
             },
         ],
     }
+    // 2025
 ];
 
 // NOTE (b): is this the best way to do this? No. Is it peformant? No. Howerver,

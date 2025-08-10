@@ -106,7 +106,7 @@ const _YearSection = (props: { year: string; guests: GuestType[] }) => {
                 display: "flex",
                 justifyItems: "left",
                 flexDir: "column",
-                mb: "50px",
+                mb: "100px",
                 w: {
                     base: "100%",
                     sm: "97.5%",

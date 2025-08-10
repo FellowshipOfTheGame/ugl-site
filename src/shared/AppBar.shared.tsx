@@ -142,6 +142,9 @@ const _NavList = () => {
             })}
         >
             <li class={AppBarLiClass}>
+                <A href='/'> INÍCIO </A>
+            </li>
+            <li class={AppBarLiClass}>
                 <A href='/convidados'> CONVIDADOS </A>
             </li>
             <li class={AppBarLiClass}>

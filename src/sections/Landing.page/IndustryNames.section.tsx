@@ -33,7 +33,7 @@ const _Text = () => {
             })}>
                 Venha conhecer de perto as pessoas que fazem acontecer na Criação de Games no Brasil.
             </p>
-            <PointyA>
+            <PointyA href="/convidados">
                 Confira
             </PointyA>
         </div>
