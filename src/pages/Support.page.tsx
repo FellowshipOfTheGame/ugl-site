@@ -20,6 +20,8 @@ const SupportPage = () => {
                     display: "flex",
                     flexDir: { base: "column", md: "row" },
                     justifyItems: "left",
+                    mt: "30px",
+                    ml: "5%",
                     mb: "50px",
                 })}
             >
@@ -27,7 +29,7 @@ const SupportPage = () => {
                     src={photo}
                     class={css({
                         objectFit: "cover",
-                        w: "34%",
+                        // w: "34%",
                         h: "100%",
 
                         "@media (max-width: 768px)": {
@@ -50,10 +52,10 @@ const SupportPage = () => {
                         p: "10px",
                         ml: {
                             base: "1%",
-                            sm: "3%",
-                            md: "7%",
-                            lg: "11%",
-                            xl: "15%",
+                            sm: "2%",
+                            md: "3%",
+                            lg: "4%",
+                            xl: "5%",
                         },
                         mt: "5%",
                     })}
@@ -66,7 +68,7 @@ const SupportPage = () => {
                             color: "ugl-orange",
                         })}
                     >
-                        VENHA SER UM APOIADOR
+                        VENHA SER UM APOIADOR!
                     </h2>
                     <div
                         class={divider({
@@ -76,17 +78,18 @@ const SupportPage = () => {
                             mb: "30px",
                         })}
                     />
-                    <p class={css({ textStyle: "barlowPThin" })}>
-                        Venha ser um apoiador!
+                    <p class={css({ textStyle: "barlowPThin", mb: '10px' })}>
+                        Divulgue sua empresa e apoie a USP Game Link!
                     </p>
-                    <p class={css({ textStyle: "barlowPThin" })}>
+                    <p class={css({ textStyle: "barlowPThin", mb: '10px' })}>
                         Neste ano, desejamos fazer a maior edição da USP Game
                         Link e para isso precisamos do seu apoio. Para obter
                         informações sobre opções de patrocínio ou divulgar o
-                        jogo do seu estúdio, veja os meios de contato abaixo.
+                        jogo do seu estúdio, clique no botão abaixo.
                     </p>
                     <p class={css({ textStyle: "barlowPThin" })}>
-                        Divulgue sua empresa e apoie a USP Game Link!
+                        A sua marca pode aparecer
+                        em nosso site e nas nossas redes sociais!
                     </p>
                 </div>
             </section>
@@ -104,14 +107,14 @@ const SupportPage = () => {
                     mb: "30px",
                 })}
             />
-            <section class={vstack({p: '10px'})}>
-                <h2 class={css({ textStyle: "barlowH2", mb: '10px'})}>
+            <section class={vstack({ p: '10px' })}>
+                <h2 class={css({ textStyle: "barlowH2", mb: '10px' })}>
                     Quero ser um apoiador
                 </h2>
                 <PointyA href="https://forms.gle/ptB6tpBKipQ7eJv59">
                     Apoie o projeto
                 </PointyA>
-                <div class={css({mb: '50px', mt:'10px' })} />
+                <div class={css({ mb: '50px', mt: '10px' })} />
             </section>
         </main>
     );

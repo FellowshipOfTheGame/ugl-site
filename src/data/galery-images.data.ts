@@ -25,8 +25,16 @@ import image21 from "../assets/images/pre-2023/21.jpg";
 import image22 from "../assets/images/pre-2023/22.jpg";
 import image23 from "../assets/images/pre-2023/23.jpg";
 import image24 from "../assets/images/pre-2023/24.jpg";
+import image01 from "../assets/images/extras-2023/image01.jpg";
+import image02 from "../assets/images/extras-2023/image02.jpg";
+import image03 from "../assets/images/extras-2023/image03.jpg";
+import image04 from "../assets/images/extras-2023/image04.jpg";
 
 export default [
+    image01,
+    image02,
+    image03,
+    image04,
     image1,
     image2,
     image3,

@@ -123,7 +123,7 @@ const _TimeLeft = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-evenly",
-                    flexDir: {base: 'column', md: 'row'},
+                    flexDir: { base: 'column', md: 'row' },
                     height: "100%",
                     // padding: {
                     //     base: "15px 5px 20px 5px",
@@ -261,7 +261,7 @@ const _EyeCatcherOverlay = () => {
                         // fontSize: {base: '32px', sm: '40px', md: '48px', lg: '56px', xl: '64px'},
                     })}
                 >
-                    O MAIOR EVENTO INDIE GAME DO BRASIL
+                    O GRANDE EVENTO DE JOGOS INDIE EM SÃO CARLOS
                 </h1>
 
                 <strong
@@ -280,11 +280,10 @@ const _EyeCatcherOverlay = () => {
                     class={css({
                         textStyle: "barlowStrong",
                         color: "rgb(30, 34, 100)",
-                        mb: {base: '5px', md: 'calc(1% + 5px)', lg: 'calc(2% + 10px)', xl: 'calc(3% + 15px)'}
+                        mb: { base: '5px', md: 'calc(1% + 5px)', lg: 'calc(2% + 10px)', xl: 'calc(3% + 15px)' }
                     })}
                 >
-                    Este é o site oficial da UGL, onde você poderá acompanhar
-                    toda a programação e novidades do evento.
+                    Bem-vindo ao site oficial da UGL, onde você pode conhecer o evento e se inscrever!
                 </p>
             </div>
 
@@ -301,7 +300,7 @@ const _EyeCatcherOverlay = () => {
                         "2xl": "80%",
                     },
                     height: "175px",
-                    display: {base: "none", sm: "flex"},
+                    display: { base: "none", sm: "flex" },
                 })}
             >
                 <_TimeLeft />

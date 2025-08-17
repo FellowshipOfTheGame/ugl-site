@@ -8,7 +8,7 @@ import { bgImgDefaults, flexCenter } from "../styles/pieces/common.piece";
 import WhatUglOffer from "../sections/Landing.page/WhatUglOffer.section";
 // import SponsorsSection from "../sections/Landing.page/Sponsors.sections";
 import LocationSection from "../sections/Landing.page/Location.section";
-// import CalendarSection from "../sections/Landing.page/Calendar.section";
+import CalendarSection from "../sections/Landing.page/Calendar.section";
 
 const CoolBannerSection = () => {
     return (
@@ -34,7 +34,7 @@ const LandingPage = () => {
     return (
         <main>
             <EyeCatcherSection />
-            {/* <CalendarSection /> */}
+            <CalendarSection />
             {/* <RegisterFormSection /> */}
             <IndustryNamesSection />
             <CoolBannerSection />

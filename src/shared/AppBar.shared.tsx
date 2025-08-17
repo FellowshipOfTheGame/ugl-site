@@ -6,7 +6,6 @@ import useWindowDimensions from "../assets/utils/hooks";
 import barsIcons from "../assets/vectors/bars.svg";
 import { flexCenter } from "../styles/pieces/common.piece";
 
-//
 const WIDTH_AT_BAR_BREAK = 1280;
 // NOTE: change in place (hard coded) the media query, a variable will not work
 // const MEDIA_QUERY = "@media (min-width: 1280px)";
@@ -103,7 +102,7 @@ const _Bars = (/*props: { sig?: () => void }*/) => {
                     right: "0",
                     overflow: "visible",
                     zIndex: "9",
-                    
+
                 })}
             >
                 <_DropDownMenu active={activeDropDown} />
@@ -117,22 +116,22 @@ const _NavList = () => {
         <ul
             class={css({
                 display: "flex",
-                flexDir: 
-                     "column",
-            
-                "@media (min-width: 1280px)": {flexDir: "row"}, // NOTE (b): this is fine. 🔥☕ 
+                flexDir:
+                    "column",
+
+                "@media (min-width: 1280px)": { flexDir: "row" }, // NOTE (b): this is fine. 🔥☕ 
 
                 // borderBottom: {
                 //     base: "1px solid gray",
                 //     "@media (min-width: 1280px)": "0", // NOTE (b): this is fine. 🔥☕
                 // },
-                position:  "absolute",
-                    // NOTE (b): this is fine. 🔥☕
-                
+                position: "absolute",
+                // NOTE (b): this is fine. 🔥☕
+
                 "@media(min-width: 1280px)": {
                     top: "0",
                     right: "0",
-                    position : "inherit",
+                    position: "inherit",
                 },
                 listStyle: "none",
                 padding: 0,
@@ -142,6 +141,9 @@ const _NavList = () => {
             })}
         >
             <li class={AppBarLiClass}>
+                <A href='/'> INSCRIÇÃO </A>
+            </li>
+            <li class={AppBarLiClass}>
                 <A href='/'> INÍCIO </A>
             </li>
             <li class={AppBarLiClass}>
@@ -150,9 +152,9 @@ const _NavList = () => {
             <li class={AppBarLiClass}>
                 <A href='/#exposicao-de-jogos'> EXPOSIÇÃO </A>
             </li>
-            {/* <li class={AppBarLiClass}>
-                <a href='#'> PROGRAMAÇÃO </a>
-            </li> */}
+            <li class={AppBarLiClass}>
+                <a href='/#schedule'> PROGRAMAÇÃO </a>
+            </li>
             <li class={AppBarLiClass}>
                 <A href='/galeria'> GALERIA </A>
             </li>
