@@ -15,10 +15,10 @@ const DAYS_TO_MILISEC = 1000 * 60 * 60 * 24;
 
 const fontSizeOffset1 = {
   base: '32px',
-  sm: '40px',
-  md: '48px',
-  lg: '56px',
-  xl: '64px',
+  sm: '32px',
+  md: '32px',
+  lg: '48px',
+  xl: '48px',
 };
 const fontSizeOffset2 = {
   base: '40px',
@@ -150,9 +150,9 @@ const _TimeLeft = () => {
           minW: {
             base: '99%',
             sm: '95%',
-            md: '72.5%',
-            lg: '70%',
-            xl: '67.5%',
+            md: '80%',
+            lg: '75%',
+            xl: '70%',
             '2xl': '65%',
           },
           maxW: {
@@ -172,14 +172,7 @@ const _TimeLeft = () => {
             fontSize: fontSizeOffset1,
             lineHeight: fontSizeOffset2,
             overflow: 'hidden',
-            mr: {
-              base: 'calc(2px + 1%)',
-              sm: 'calc(4px + 1%)',
-              md: 'calc(1px + 1%)',
-              lg: 'calc(4px + 2%)',
-              xl: 'calc(8px + 3%)',
-              '2xl': 'calc(12px + 3%)',
-            },
+            mr: '1%'
           })}
         >
           FALTAM
@@ -226,13 +219,6 @@ const _TimeLeft = () => {
             },
             bottom: '0px',
             aspectRatio: 201 / 264,
-
-            // margin: {
-            //     base: "5px",
-            //     md: "0 0 10px 20px",
-            //     lg: "0 0 10px 40px",
-            //     xl: "0 0 10px 100px",
-            // },
           })}
         />
       </div>
@@ -319,6 +305,33 @@ const _EyeCatcherOverlay = () => {
           Bem-vindo ao site oficial da UGL, onde você pode conhecer o evento e
           se inscrever!
         </p>
+      </div>
+
+      <div
+        class={css({
+          ...flexCenter,
+          color: 'ugl-orange',
+          textStyle: 'majorTitle',
+          fontSize: { base: '24px', sm: '28px', md: '32px', lg: '36px' },
+          lineHeight: { base: '28px', sm: '32px', md: '36px', lg: '40px' },
+          marginBottom: { base: '20px', md: '25px' },
+          textAlign: 'center',
+          background: 'rgba(47, 47, 47, 0.85)',
+          backdropFilter: 'blur(20px)',
+          border: '2px solid rgba(247, 148, 33, 0.4)',
+          borderRadius: '16px',
+          padding: { base: '12px 24px', sm: '16px 32px', md: '20px 40px' },
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+          transition: 'all 0.3s ease',
+          _hover: {
+            transform: 'scale(1.02)',
+            background: 'rgba(47, 47, 47, 0.9)',
+            borderColor: 'rgba(247, 148, 33, 0.6)',
+          },
+        })}
+      >
+        07 a 09 de Novembro
       </div>
 
       <div
