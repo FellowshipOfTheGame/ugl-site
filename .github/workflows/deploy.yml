@@ -50,15 +50,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openfortivpn
 
+      - name: Mask VPN Credentials
+        run: |
+          echo "::add-mask::${{ github.event.inputs.vpn_username }}"
+          echo "::add-mask::${{ github.event.inputs.vpn_password }}"
+
       - name: Connect to FortiClient VPN
         env:
           VPN_USER: ${{ github.event.inputs.vpn_username }}
           VPN_PASS: ${{ github.event.inputs.vpn_password }}
         run: |
-          # Mask credentials in logs
-          echo "::add-mask::$VPN_USER"
-          echo "::add-mask::$VPN_PASS"
-          
           # Start VPN connection in background
           sudo openfortivpn ${{ secrets.FORTIGATE_SERVER }} \
             --username="$VPN_USER" \
