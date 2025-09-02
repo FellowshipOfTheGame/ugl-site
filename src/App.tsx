@@ -9,7 +9,6 @@ import GuestsPage from './pages/Guests.page.tsx';
 import SupportPage from './pages/Support.page.tsx';
 import AboutPage from './pages/About.page.tsx';
 import { lazy } from 'solid-js';
-import './assets/logos/ugl-logos/notxt-variation/ugl-notxt-light-logo.ico';
 // import GalleryPage from "./pages/Gallery.page.tsx";
 
 const GalleryPage = lazy(() => import('./pages/Gallery.page.tsx'));
