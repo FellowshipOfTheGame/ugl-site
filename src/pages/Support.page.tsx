@@ -111,8 +111,8 @@ const SupportPage = () => {
                 <h2 class={css({ textStyle: "barlowH2", mb: '10px' })}>
                     Quero ser um apoiador
                 </h2>
-                <PointyA href="https://forms.gle/ptB6tpBKipQ7eJv59">
-                    Apoie o projeto
+                <PointyA href="https://forms.gle/AEwGcrjAukqYC4Mb7">
+                    Apoie a UGL
                 </PointyA>
                 <div class={css({ mb: '50px', mt: '10px' })} />
             </section>

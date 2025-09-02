@@ -141,7 +141,7 @@ const _NavList = () => {
             })}
         >
             <li class={AppBarLiClass}>
-                <A href='/'> INSCRIÇÃO </A>
+                <A href='https://docs.google.com/forms/d/e/1FAIpQLSdSI0JPz0TzyuFLp_T9Pa3nxNLmrvbVr-x0SFhJgRT5uuUslw/viewform?usp=pp_url&entry.1105553797=Aceito' target="_blank"> INSCRIÇÃO </A>
             </li>
             <li class={AppBarLiClass}>
                 <A href='/'> INÍCIO </A>
