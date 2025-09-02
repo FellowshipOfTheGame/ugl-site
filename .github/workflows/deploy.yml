@@ -41,13 +41,28 @@ jobs:
           zip -r ../ugl.zip .
           cd ..
 
+      - name: Install openfortivpn
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openfortivpn
+
       - name: Connect to FortiClient VPN
-        uses: adrianjost/forticlient-openfortivpn-action@v1
-        with:
-          server: ${{ secrets.FORTIGATE_SERVER }}
-          username: ${{ github.event.inputs.vpn_username }}
-          password: ${{ github.event.inputs.vpn_password }}
-          trusted-cert: ${{ secrets.FORTIGATE_CERT }}
+        run: |
+          # Create openfortivpn config
+          echo "${{ github.event.inputs.vpn_username }}" > /tmp/vpn_username
+          echo "${{ github.event.inputs.vpn_password }}" > /tmp/vpn_password
+          
+          # Start VPN connection in background
+          sudo openfortivpn ${{ secrets.FORTIGATE_SERVER }} \
+            --username=${{ github.event.inputs.vpn_username }} \
+            --password=${{ github.event.inputs.vpn_password }} \
+            --trusted-cert=${{ secrets.FORTIGATE_CERT }} &
+          
+          # Wait for VPN to establish
+          sleep 10
+          
+          # Clean up credential files
+          rm -f /tmp/vpn_username /tmp/vpn_password
 
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
