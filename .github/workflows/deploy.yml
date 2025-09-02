@@ -51,22 +51,22 @@ jobs:
           sudo apt-get install -y openfortivpn
 
       - name: Connect to FortiClient VPN
+        env:
+          VPN_USER: ${{ github.event.inputs.vpn_username }}
+          VPN_PASS: ${{ github.event.inputs.vpn_password }}
         run: |
-          # Create openfortivpn config
-          echo "${{ github.event.inputs.vpn_username }}" > /tmp/vpn_username
-          echo "${{ github.event.inputs.vpn_password }}" > /tmp/vpn_password
+          # Mask credentials in logs
+          echo "::add-mask::$VPN_USER"
+          echo "::add-mask::$VPN_PASS"
           
           # Start VPN connection in background
           sudo openfortivpn ${{ secrets.FORTIGATE_SERVER }} \
-            --username=${{ github.event.inputs.vpn_username }} \
-            --password=${{ github.event.inputs.vpn_password }} \
+            --username="$VPN_USER" \
+            --password="$VPN_PASS" \
             --trusted-cert=${{ secrets.FORTIGATE_CERT }} &
           
           # Wait for VPN to establish
           sleep 10
-          
-          # Clean up credential files
-          rm -f /tmp/vpn_username /tmp/vpn_password
 
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
