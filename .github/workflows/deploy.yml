@@ -1,0 +1,86 @@
+name: Deploy to Server
+
+on:
+  workflow_dispatch:
+    inputs:
+      vpn_username:
+        description: 'USP Number'
+        required: true
+        type: string
+      vpn_password:
+        description: 'USP Password'
+        required: true
+        type: string
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Panda CSS
+        run: npm run prepare
+
+      - name: Build project
+        run: npm run build
+
+      - name: Create deployment archive
+        run: |
+          cd dist
+          zip -r ../ugl.zip .
+          cd ..
+
+      - name: Connect to FortiClient VPN
+        uses: adrianjost/forticlient-openfortivpn-action@v1
+        with:
+          server: ${{ secrets.FORTIGATE_SERVER }}
+          username: ${{ github.event.inputs.vpn_username }}
+          password: ${{ github.event.inputs.vpn_password }}
+          trusted-cert: ${{ secrets.FORTIGATE_CERT }}
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Deploy to server
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          # Upload the build archive
+          sshpass -e scp -o StrictHostKeyChecking=no ugl.zip ${{ secrets.SSH_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/
+          
+          # Execute deployment commands on server
+          sshpass -e ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            cd ${{ secrets.DEPLOY_PATH }}
+            
+            # Backup current version (if exists)
+            if [ -d "ugl" ]; then
+              rm -rf ugl-old 2>/dev/null || true
+              mv ugl ugl-old
+            fi
+            
+            # Create new current directory and extract
+            mkdir -p ugl
+            cd ugl
+            unzip -o ../ugl.zip
+            cd ..
+            
+            # Clean up the zip file
+            rm ugl.zip
+            
+            # Run deploy script (if exists)
+            if [ -f "deploy.sh" ]; then
+              chmod +x deploy.sh
+              ./deploy.sh
+            fi
+          EOF
