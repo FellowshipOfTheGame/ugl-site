@@ -18,9 +18,10 @@ function App() {
     return (
         <div
             class={css({
-                width: "100vw",
-                // minHeight: '100vh',
+                width: "100%",
+                maxWidth: "100vw",
                 overflow: "hidden",
+                overflowX: "hidden",
             })}
         >
             <Router>

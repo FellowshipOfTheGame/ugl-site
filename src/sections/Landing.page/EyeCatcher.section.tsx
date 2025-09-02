@@ -50,12 +50,12 @@ const _ClockDisplay = (props: { time: number; title: string }) => {
 
                 textAlign: "center",
                 m: {
-                    base: "3px",
-                    sm: "1px 2px",
-                    md: "2px 3px",
-                    lg: "2px 4px",
-                    xl: "3px 6px",
-                    "2xl": "4px 8px",
+                    base: "2px 3px",
+                    sm: "3px 4px",
+                    md: "4px 5px",
+                    lg: "4px 6px",
+                    xl: "5px 8px",
+                    "2xl": "6px 10px",
                 },
                 fontSize: fontSizeOffset2,
                 lineHeight: fontSizeOffset3,
@@ -64,16 +64,19 @@ const _ClockDisplay = (props: { time: number; title: string }) => {
                 p: "1px",
 
                 minW: {
-                    base: "50px",
-                    sm: "60px",
-                    md: "70px",
-                    lg: "80px",
-                    xl: "90px",
+                    base: "35px",
+                    sm: "50px",
+                    md: "60px",
+                    lg: "70px",
+                    xl: "80px",
                 },
             })}
         >
             <p>{formatTwoDigits(props.time)}</p>
-            <p class={css({ fontSize: "14px", lineHeight: "16px" })}>
+            <p class={css({ 
+                fontSize: { base: "10px", sm: "12px", md: "14px" }, 
+                lineHeight: { base: "12px", sm: "14px", md: "16px" } 
+            })}>
                 {props.title}
             </p>
         </div>
@@ -249,12 +252,19 @@ const _EyeCatcherOverlay = () => {
                         textStyle: "majorTitle",
                         color: "#282c64",
                         maxW: {
-                            base: "auto",
-                            sm: "95%",
+                            base: "95%",
+                            sm: "90%",
                             md: "85%",
                             lg: "70%",
                             xl: "55%",
                             "2xl": "40%",
+                        },
+                        fontSize: {
+                            base: "24px",
+                            sm: "28px",
+                            md: "32px",
+                            lg: "36px",
+                            xl: "40px",
                         },
                         textShadow: "rgba(0, 0, 0, 0.4) 0px 4px 5px",
                         marginBottom: { base: "25px", lg: "30px" },
@@ -269,8 +279,10 @@ const _EyeCatcherOverlay = () => {
                         color: "#F79421",
                         textStyle: "barlowH3",
                         backgroundColor: "black",
-                        padding: "5px 15px",
-                        marginBottom: "20px",
+                        padding: { base: "4px 8px", sm: "5px 15px" },
+                        marginBottom: { base: "15px", md: "20px" },
+                        fontSize: { base: "14px", sm: "16px", md: "18px" },
+                        textAlign: "center",
                     })}
                 >
                     BEM-VINDO A USP GAME LINK!
@@ -280,7 +292,10 @@ const _EyeCatcherOverlay = () => {
                     class={css({
                         textStyle: "barlowStrong",
                         color: "rgb(30, 34, 100)",
-                        mb: { base: '5px', md: 'calc(1% + 5px)', lg: 'calc(2% + 10px)', xl: 'calc(3% + 15px)' }
+                        mb: { base: '5px', md: 'calc(1% + 5px)', lg: 'calc(2% + 10px)', xl: 'calc(3% + 15px)' },
+                        fontSize: { base: "14px", sm: "16px", md: "18px" },
+                        textAlign: "center",
+                        maxW: { base: "90%", md: "80%" }
                     })}
                 >
                     Bem-vindo ao site oficial da UGL, onde você pode conhecer o evento e se inscrever!
@@ -292,15 +307,15 @@ const _EyeCatcherOverlay = () => {
                     ...flexCenter,
                     backgroundColor: "#2f2f2f",
                     width: {
-                        base: "100%",
+                        base: "98%",
                         sm: "96%",
                         md: "92%",
                         lg: "88%",
                         xl: "84%",
                         "2xl": "80%",
                     },
-                    height: "175px",
-                    display: { base: "none", sm: "flex" },
+                    height: { base: "140px", sm: "175px" },
+                    display: "flex",
                 })}
             >
                 <_TimeLeft />
@@ -314,10 +329,11 @@ const EyeCatcherSection = () => {
         <section
             class={css({
                 ...flexCenter,
-                minWidth: "400px",
-                height: "700px",
+                minWidth: { base: "100vw", sm: "400px" },
+                width: "100%",
+                height: { base: "600px", md: "700px" },
                 overflow: "hidden",
-                position: "relative", // Add this to make positioning easier
+                position: "relative",
                 flexDir: "row",
             })}
         >
@@ -332,9 +348,8 @@ const EyeCatcherSection = () => {
                     objectFit: "cover",
 
                     minH: "100%",
-                    minW: { base: "100vw" },
-
-                    // '@media (max-width: 768px)': {}
+                    minW: "100%",
+                    width: "100%"
                 })}
             >
                 <source src={videoSource} type='video/mp4' />

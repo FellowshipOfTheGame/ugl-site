@@ -4,7 +4,6 @@ import ugl_logo from "../assets/logos/ugl-logos/main-logos/ugl-white-01.webp";
 import { Accessor, Show, createEffect, createSignal } from "solid-js";
 import useWindowDimensions from "../assets/utils/hooks";
 import barsIcons from "../assets/vectors/bars.svg";
-import { flexCenter } from "../styles/pieces/common.piece";
 
 const WIDTH_AT_BAR_BREAK = 1280;
 // NOTE: change in place (hard coded) the media query, a variable will not work
@@ -22,9 +21,10 @@ const AppBarLiClass = css({
     },
     "@media(max-width: 1279px)": {
         minW: '100%',
-        minH: '50px',
-        p: '10px',
-        marginRight: "10px",
+        minH: '40px',
+        p: '8px',
+        marginRight: "0px",
+        marginBottom: "5px",
     },
 });
 
@@ -34,36 +34,24 @@ const _DropDownMenu = (props: { active: Accessor<boolean> }) => {
             <div
                 class={css({
                     position: "relative",
-                    // top: "0",
                     right: "0",
-                    top: "100px",
-                    minW: "300px",
-                    // minW: { base: "66vw", sm: '50%vw', md: "33vw", lg: '25vw', xl: "20vw", '2xl': '16vw' },
+                    top: { base: "80px", md: "100px" },
+                    minW: { base: "100vw", sm: "400px", md: "300px" },
                     bgColor: "ugl-purple",
-                    boxShadow: "-2xp 2xp 4px black",
-                    // opacity: "100%",
+                    boxShadow: "-2px 2px 4px black",
                     zIndex: "10",
                     display: "flex",
-                    justifyContent: "right",
-                    textAlign: "right",
+                    justifyContent: { base: "center", md: "right" },
+                    textAlign: { base: "center", md: "right" },
                     alignItems: "center",
-                    p: "25px",
-                    overflow: "hidden",
-                    // h: "0",
+                    p: { base: "15px", md: "25px" },
+                    overflow: { base: "auto", md: "hidden" },
                     transition: "all .4s ease",
-                    h: '400px',
+                    h: "auto",
+                    maxH: { base: "calc(100vh - 80px)", md: "400px" },
                 })}
             >
-                <div
-                    class={css({
-                        ...flexCenter,
-                        position: "relative",
-                        top: "0px",
-                        right: "100px",
-                    })}
-                >
-                    <_NavList />
-                </div>
+                <_NavList />
             </div>
         </Show>
     );
@@ -116,17 +104,9 @@ const _NavList = () => {
         <ul
             class={css({
                 display: "flex",
-                flexDir:
-                    "column",
-
-                "@media (min-width: 1280px)": { flexDir: "row" }, // NOTE (b): this is fine. 🔥☕ 
-
-                // borderBottom: {
-                //     base: "1px solid gray",
-                //     "@media (min-width: 1280px)": "0", // NOTE (b): this is fine. 🔥☕
-                // },
-                position: "absolute",
-                // NOTE (b): this is fine. 🔥☕
+                flexDir: { base: "column", xl: "row" },
+                width: { base: "100%", xl: "auto" },
+                position: { base: "static", xl: "absolute" },
 
                 "@media(min-width: 1280px)": {
                     top: "0",
@@ -136,7 +116,7 @@ const _NavList = () => {
                 listStyle: "none",
                 padding: 0,
                 margin: 0,
-                justifyContent: "center", // Center items horizontally
+                justifyContent: "center",
                 textStyle: "appBarFont",
             })}
         >
@@ -149,9 +129,11 @@ const _NavList = () => {
             <li class={AppBarLiClass}>
                 <A href='/convidados'> CONVIDADOS </A>
             </li>
+            {/*
             <li class={AppBarLiClass}>
                 <A href='/#exposicao-de-jogos'> EXPOSIÇÃO </A>
             </li>
+            */}
             <li class={AppBarLiClass}>
                 <a href='/#schedule'> PROGRAMAÇÃO </a>
             </li>
@@ -190,7 +172,7 @@ const AppBar = () => {
     return (
         <header
             class={css({
-                h: "100px",
+                h: { base: "80px", md: "100px" },
                 width: "100%",
 
                 display: "flex",
@@ -199,11 +181,14 @@ const AppBar = () => {
 
                 backgroundColor: "ugl-purple",
                 color: "white",
-                padding: "0 20px", // Add padding for spacing
+                padding: { base: "0 10px", md: "0 20px" }
             })}
         >
             <A href='/'>
-                <img src={ugl_logo} class={css({ minW: "196px" })} />
+                <img src={ugl_logo} class={css({
+                    minW: { base: "120px", sm: "150px", md: "180px", lg: "196px" },
+                    maxW: { base: "150px", sm: "180px", md: "200px", lg: "220px" }
+                })} />
             </A>
             <nav
                 class={css({

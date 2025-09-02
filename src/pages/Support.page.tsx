@@ -16,7 +16,8 @@ const SupportPage = () => {
         >
             <section
                 class={css({
-                    h: "500px",
+                    h: { base: "auto", md: "500px" },
+                    minH: { base: "auto", md: "500px" },
                     display: "flex",
                     flexDir: { base: "column", md: "row" },
                     justifyItems: "left",
@@ -57,14 +58,14 @@ const SupportPage = () => {
                             lg: "4%",
                             xl: "5%",
                         },
-                        mt: "5%",
+                        mt: { base: "20px", md: "5%" },
                     })}
                 >
                     <h2
                         class={css({
                             textStyle: "barlowH2",
-                            lineHeight: "72px",
-                            fontSize: "60px",
+                            lineHeight: { base: "40px", md: "72px" },
+                            fontSize: { base: "32px", sm: "40px", md: "60px" },
                             color: "ugl-orange",
                         })}
                     >
@@ -96,13 +97,7 @@ const SupportPage = () => {
             <div
                 class={divider({
                     w: "20%",
-                    mt: {
-                        base: "calc( 100px + 1% + 1vh + 1vw)",
-                        sm: "calc( 75px + 1% + 1vh + 1vw)",
-                        md: "calc( 50px + 1% + 1vh + 1vw)",
-                        lg: "calc( 25px + 1% + 1vh + 1vw)",
-                        xl: "2px",
-                    },
+                    mt: { base: "40px", md: "20px" },
                     ml: "40%",
                     mb: "30px",
                 })}

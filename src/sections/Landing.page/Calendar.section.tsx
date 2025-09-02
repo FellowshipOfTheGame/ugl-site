@@ -14,23 +14,13 @@ const CalendarSection = () => {
             <div class={css({
                 ...flexCenter,
                 w: "100%",
-                display: { base: "none", md: "flex" },
+                p: { base: "10px", md: "0" },
             })}>
-                {/* <img src={general_calendar_2024} alt='' class={css({ w: '99%',  maxW: '1200px' })} /> */}
-                <img src={comming_soon_calendar} alt='' class={css({ w: '99%', maxW: '1200px' })} />
-            </div>
-
-            <div
-                class={css({
-                    w: "100%",
-                    display: { base: "flex", md: "none" },
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDir: { base: "column", md: "row" },
-                    flexWrap: { base: "nowrap", md: "wrap" },
-
-                })}
-            >
+                <img src={comming_soon_calendar} alt='Cronograma em breve' class={css({ 
+                    w: { base: "95%", md: "99%" }, 
+                    maxW: { base: "400px", md: "1200px" },
+                    height: "auto"
+                })} />
             </div>
 
         </section>
