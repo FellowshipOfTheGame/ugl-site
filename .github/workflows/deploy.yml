@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Hide sensitive inputs
+        uses: levibostian/action-hide-sensitive-inputs@v1
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -50,20 +53,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openfortivpn
 
-      - name: Mask VPN Credentials
-        run: |
-          echo "::add-mask::${{ github.event.inputs.vpn_username }}"
-          echo "::add-mask::${{ github.event.inputs.vpn_password }}"
-
       - name: Connect to FortiClient VPN
-        env:
-          VPN_USER: ${{ github.event.inputs.vpn_username }}
-          VPN_PASS: ${{ github.event.inputs.vpn_password }}
         run: |
           # Start VPN connection in background
           sudo openfortivpn ${{ secrets.FORTIGATE_SERVER }} \
-            --username="$VPN_USER" \
-            --password="$VPN_PASS" \
+            --username="${{ github.event.inputs.vpn_username }}" \
+            --password="${{ github.event.inputs.vpn_password }}" \
             --trusted-cert=${{ secrets.FORTIGATE_CERT }} &
           
           # Wait for VPN to establish
