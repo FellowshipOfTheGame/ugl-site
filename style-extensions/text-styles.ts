@@ -1,142 +1,207 @@
-import { defineTextStyles } from "@pandacss/dev";
+import { defineTextStyles } from '@pandacss/dev';
 
 const textStyles = defineTextStyles({
-    appBarFont: {
-        description: "Use this style in the AppBar.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "700",
-            fontSize: "25px",
-            lineHeight: "58px",
-            letterSpacing: "0",
-        },
+  // Navigation
+  appBarFont: {
+    description: 'Navigation menu text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.3',
+      letterSpacing: '0.05em',
     },
+  },
 
-    majorTitle: {
-        description: "Use this style in the AppBar.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "700",
-            fontSize: {
-                base: "46px",
-                sm: "54px",
-                md: "62px",
-                lg: "70px",
-                xl: "78px",
-                "2xl": "80px",
-            },
-            lineHeight: {
-                base: "62px",
-                sm: "70px",
-                md: "78px",
-                lg: "86px",
-                xl: "94px",
-                "2xl": "96px",
-            },
-        },
+  // Headings - Consistent hierarchy
+  majorTitle: {
+    description: 'Main hero title',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '700',
+      fontSize: {
+        base: '32px',
+        sm: '40px',
+        md: '48px',
+        lg: '56px',
+        xl: '64px',
+      },
+      lineHeight: '1.2',
+      letterSpacing: '-0.025em',
     },
+  },
 
-    barlowH2: {
-        description: "Use this style as a section title.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "700",
-            fontSize: {
-                base: "35px",
-                sm: "37px",
-                md: "40px",
-                lg: "43px",
-                xl: "45px",
-            },
-            lineHeight: {
-                base: "40px",
-                sm: "43px",
-                md: "45px",
-                lg: "47px",
-                xl: "50px",
-            },
-            letterSpacing: "0.0em",
-        },
+  h1: {
+    description: 'Primary heading',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '700',
+      fontSize: {
+        base: '28px',
+        md: '40px',
+        lg: '48px',
+      },
+      lineHeight: '1.2',
+      letterSpacing: '-0.025em',
     },
+  },
 
-    barlowH3: {
-        description: "Use this style in the AppBar.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "700",
-            fontSize: {
-                base: "24px",
-                sm: "26px",
-                md: "28px",
-                lg: "30px",
-                xl: "32px",
-            },
-            letterSpacing: "0.1em",
-        },
+  h2: {
+    description: 'Section heading',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '700',
+      fontSize: {
+        base: '24px',
+        md: '32px',
+        lg: '40px',
+      },
+      lineHeight: '1.3',
+      letterSpacing: '0em',
     },
+  },
 
-    barlowP: {
-        description: "Use this style in common text.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "500",
-            fontSize: "22px",
-            lineHeight: "29px",
-            letterSpacing: "0.05em",
-        },
+  h3: {
+    description: 'Subsection heading',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: {
+        base: '20px',
+        md: '24px',
+        lg: '28px',
+      },
+      lineHeight: '1.3',
+      letterSpacing: '0.025em',
     },
+  },
 
-    barlowPSmall: {
-        description: "Use this style in common text.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "500",
-            fontSize: "16px",
-            lineHeight: "28.8px",
-            letterSpacing: "0.05em",
-        },
+  // Body text - Consistent sizing
+  bodyLarge: {
+    description: 'Large body text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '18px', md: '20px' },
+      lineHeight: '1.6',
     },
+  },
 
-    barlowPThin: {
-        description: "Use this style in common text.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "400",
-            fontSize: "18px",
-            lineHeight: "32px",
-        },
+  body: {
+    description: 'Default body text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.5',
     },
+  },
 
-    barlowStrong: {
-        description: "Use this style in a strong text.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "700",
-            fontSize: "22px",
-            lineHeight: "29px",
-            letterSpacing: "0.05em",
-        },
+  bodySmall: {
+    description: 'Small body text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '14px', md: '16px' },
+      lineHeight: '1.5',
     },
+  },
 
-    guestName: {
-        description:
-            "This text style is used in the name of the guests in the guests page.",
-        value: {
-            fontFamily: "'Playfair Display', sans-serif",
-            fontWeight: "700",
-            fontSize: "25px",
-        },
+  // Emphasized text
+  strong: {
+    description: 'Emphasized body text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.5',
     },
+  },
 
-    guestJob: {
-        description:
-            "This text style is used in the guest subtitle, their job, game, etc.",
-        value: {
-            fontFamily: "Barlow, sans-serif",
-            fontWeight: "400",
-            fontSize: "16px",
-        },
+  // Special components
+  guestName: {
+    description: 'Guest name in cards',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '700',
+      fontSize: { base: '20px', md: '24px' },
+      lineHeight: '1.3',
+      letterSpacing: '-0.025em',
     },
+  },
+
+  guestJob: {
+    description: 'Guest job title',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '14px', md: '16px' },
+      lineHeight: '1.4',
+      color: '#64748b',
+    },
+  },
+
+  // Interactive elements
+  button: {
+    description: 'Button text',
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.2',
+      letterSpacing: '0.025em',
+    },
+  },
+
+  // Legacy aliases for gradual migration
+  barlowH2: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '700',
+      fontSize: { base: '24px', md: '32px', lg: '40px' },
+      lineHeight: '1.3',
+    },
+  },
+  barlowH3: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: { base: '20px', md: '24px', lg: '28px' },
+      lineHeight: '1.3',
+    },
+  },
+  barlowP: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.5',
+    },
+  },
+  barlowPSmall: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '14px', md: '16px' },
+      lineHeight: '1.5',
+    },
+  },
+  barlowPThin: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '400',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.6',
+    },
+  },
+  barlowStrong: {
+    value: {
+      fontFamily: 'Barlow, sans-serif',
+      fontWeight: '600',
+      fontSize: { base: '16px', md: '18px' },
+      lineHeight: '1.5',
+    },
+  },
 });
 
 export default textStyles;

@@ -2,8 +2,13 @@
     :where(:root, :host) {
   --colors-ugl-blue: #324158;
   --colors-ugl-purple: #282c64;
+  --colors-ugl-purple-light: #3c4088;
+  --colors-ugl-purple-dark: #1e2050;
   --colors-ugl-yellow: #f7c949;
   --colors-ugl-orange: #f79421;
+  --colors-ugl-orange-light: #ffb84d;
+  --colors-gradient-primary: linear-gradient(135deg, #282c64 0%, #3c4088 50%, #4a5099 100%);
+  --colors-gradient-accent: linear-gradient(135deg, #f79421 0%, #ffb84d 100%);
   --breakpoints-sm: 640px;
   --breakpoints-md: 768px;
   --breakpoints-lg: 1024px;

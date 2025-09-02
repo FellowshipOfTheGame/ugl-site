@@ -1,0 +1,7 @@
+node_modules/
+dist/
+styled-system/
+*.config.js
+*.config.ts
+pnpm-lock.yaml
+*.md

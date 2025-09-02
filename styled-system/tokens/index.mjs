@@ -7,6 +7,14 @@ const tokens = {
     "value": "#282c64",
     "variable": "var(--colors-ugl-purple)"
   },
+  "colors.ugl-purple-light": {
+    "value": "#3c4088",
+    "variable": "var(--colors-ugl-purple-light)"
+  },
+  "colors.ugl-purple-dark": {
+    "value": "#1e2050",
+    "variable": "var(--colors-ugl-purple-dark)"
+  },
   "colors.ugl-yellow": {
     "value": "#f7c949",
     "variable": "var(--colors-ugl-yellow)"
@@ -14,6 +22,18 @@ const tokens = {
   "colors.ugl-orange": {
     "value": "#f79421",
     "variable": "var(--colors-ugl-orange)"
+  },
+  "colors.ugl-orange-light": {
+    "value": "#ffb84d",
+    "variable": "var(--colors-ugl-orange-light)"
+  },
+  "colors.gradient-primary": {
+    "value": "linear-gradient(135deg, #282c64 0%, #3c4088 50%, #4a5099 100%)",
+    "variable": "var(--colors-gradient-primary)"
+  },
+  "colors.gradient-accent": {
+    "value": "linear-gradient(135deg, #f79421 0%, #ffb84d 100%)",
+    "variable": "var(--colors-gradient-accent)"
   },
   "breakpoints.sm": {
     "value": "640px",

@@ -1,33 +1,37 @@
-import { JSXElement, children, createSignal, onCleanup } from "solid-js";
-import { css } from "../../../styled-system/css";
-import { flexCenter } from "../../styles/pieces/common.piece";
-import videoSource from "../../assets/videos/ugl-best-clips-01.mp4";
+import { JSXElement, children, createSignal, onCleanup } from 'solid-js';
+import { css } from '../../../styled-system/css';
+import { flexCenter } from '../../styles/pieces/common.piece';
+import videoSource from '../../assets/videos/ugl-best-clips-01.mp4';
 
 const _Topic = (props: { children: JSXElement }) => {
-    const c = children(() => props.children);
-    return (
-        <div
-            class={css({
-                w: { base: "100%", md: "40%", lg: "30%", xl: "20%" },
-                m: "10px 25px",
-                textAlign: "center",
+  const c = children(() => props.children);
+  return (
+    <div
+      class={css({
+        w: { base: '100%', md: '48%', lg: '31%' },
+        p: { base: '24px 16px', md: '32px 24px' },
+        m: { base: '16px 0', md: '0 16px' },
+        textAlign: 'center',
+        background: 'rgba(255, 255, 255, 0.05)',
+        borderRadius: '16px',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        backdropFilter: 'blur(10px)',
 
-                "& > h3": {
-                    mb: "20px",
-                    textStyle: "barlowH2",
-                    fontSize: "32px",
-                },
+        '& > h3': {
+          mb: '16px',
+          textStyle: 'h3',
+          color: 'white',
+        },
 
-                "& > p": {
-                    textStyle: "barlowP",
-                    fontSize: "16px",
-                    lineHeight: "24px",
-                },
-            })}
-        >
-            {c()}
-        </div>
-    );
+        '& > p': {
+          textStyle: 'body',
+          color: 'rgba(255, 255, 255, 0.9)',
+        },
+      })}
+    >
+      {c()}
+    </div>
+  );
 };
 
 // const _PauseSvg = () => {
@@ -67,197 +71,193 @@ const _Topic = (props: { children: JSXElement }) => {
 
 import diamondPause from '../../assets/vectors/diamondPause.svg';
 
-
 const _Video = () => {
-    const [isPaused, setIsPaused] = createSignal(false);
+  const [isPaused, setIsPaused] = createSignal(false);
 
-    const [videoRef, setVideoRef] = createSignal<HTMLVideoElement | null>(null);
+  const [videoRef, setVideoRef] = createSignal<HTMLVideoElement | null>(null);
 
-    const toggleVideoPlayback = () => {
-        const video = videoRef();
-        if (video) {
-            if (video.paused) {
-                video.play();
-                setIsPaused(false);
-            } else {
-                video.pause();
-                setIsPaused(true);
-            }
-        }
-    };
+  const toggleVideoPlayback = () => {
+    const video = videoRef();
+    if (video) {
+      if (video.paused) {
+        video.play();
+        setIsPaused(false);
+      } else {
+        video.pause();
+        setIsPaused(true);
+      }
+    }
+  };
 
-    // Clean up event listeners to prevent memory leaks
-    onCleanup(() => {
-        const video = videoRef();
-        if (video) {
-            video.removeEventListener("play", handlePlay);
-            video.removeEventListener("pause", handlePause);
-        }
-    });
+  // Clean up event listeners to prevent memory leaks
+  onCleanup(() => {
+    const video = videoRef();
+    if (video) {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+    }
+  });
 
-    const handlePlay = () => {
-        // Update the button state if the video plays automatically (e.g., when src changes)
-        const video = videoRef();
-        if (video) {
-            video.addEventListener("pause", handlePause);
-        }
-    };
+  const handlePlay = () => {
+    // Update the button state if the video plays automatically (e.g., when src changes)
+    const video = videoRef();
+    if (video) {
+      video.addEventListener('pause', handlePause);
+    }
+  };
 
-    const handlePause = () => {
-        // Update the button state if the video pauses automatically (e.g., when src changes)
-        const video = videoRef();
-        if (video) {
-            video.removeEventListener("pause", handlePause);
-        }
-    };
+  const handlePause = () => {
+    // Update the button state if the video pauses automatically (e.g., when src changes)
+    const video = videoRef();
+    if (video) {
+      video.removeEventListener('pause', handlePause);
+    }
+  };
 
-    return (
+  return (
+    <div
+      class={css({
+        width: { base: '72%', md: '48vw', xl: '32vw' },
+        display: { base: 'inherit', sm: 'inherit' },
+        ml: { base: '0', md: '15px', lg: '30px' },
+        clipPath: 'polygon(50% 0%, 78.125% 50%, 50% 100%, 21.875% 50%)', // Create a diamond shape
+        overflow: 'hidden', // Hide the overflowing parts
+        position: 'relative', // Position to control video size within the diamond
+        paddingTop: {
+          base: '40%',
+          md: '25%',
+          lg: '29%',
+          xl: '25%',
+        },
+        cursor: 'pointer', // Add a pointer cursor to indicate clickability
+        '& > div img': {
+          w: '12vw',
+          h: '12vh',
+          transition: 'width .4s ease, height .4s ease',
+        },
+        _hover: {
+          '& > div img': {
+            w: '15vw',
+            h: '15vh',
+          },
+        },
+      })}
+    >
+      <video
+        ref={setVideoRef}
+        src={videoSource}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        autoplay={true}
+        muted={true}
+        loop={true}
+        onClick={toggleVideoPlayback} // Add an onClick event handler
+        // onPause={() => {}}
+        class={css({
+          width: '100%', // Set video width to 100% to fill the diamond container
+          position: 'absolute', // Position the video absolutely within the container
+          top: '50%', // Center vertically
+          left: '50%', // Center horizontally
+          transform: 'translate(-50%, -50%)', // Center the video within the container
+          display: isPaused() ? 'none' : 'block', // Hide the video when paused
+        })}
+      >
+        <source src={videoSource} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Custom pause icon */}
+      {isPaused() && (
         <div
-            class={css({
-                width: { base: "72%", md: "48vw", xl: "32vw" },
-                display: { base: "inherit", sm: "inherit" },
-                ml: { base: "0", md: "15px", lg: "30px" },
-                clipPath: "polygon(50% 0%, 78.125% 50%, 50% 100%, 21.875% 50%)", // Create a diamond shape
-                overflow: "hidden", // Hide the overflowing parts
-                position: "relative", // Position to control video size within the diamond
-                paddingTop: {
-                    base: "40%",
-                    md: "25%",
-                    lg: "29%",
-                    xl: "25%",
-                },
-                cursor: "pointer", // Add a pointer cursor to indicate clickability
-                '& > div img': {
-                  w: '12vw',
-                  h: '12vh',
-                  transition: 'width .4s ease, height .4s ease',
-                },
-                _hover: {
-                  '& > div img': {
-                    w: '15vw',
-                    h: '15vh',
-                  }
-                },
-            })}
+          onClick={toggleVideoPlayback}
+          class={css({
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            fontSize: '36px',
+            color: 'white',
+            zIndex: 1, // Ensure the icon is above the video
+          })}
         >
-            <video
-                ref={setVideoRef}
-                src={videoSource}
-                onPlay={handlePlay}
-                onPause={handlePause}
-                autoplay={true}
-                muted={true}
-                loop={true}
-                onClick={toggleVideoPlayback} // Add an onClick event handler
-                // onPause={() => {}}
-                class={css({
-                    width: "100%", // Set video width to 100% to fill the diamond container
-                    position: "absolute", // Position the video absolutely within the container
-                    top: "50%", // Center vertically
-                    left: "50%", // Center horizontally
-                    transform: "translate(-50%, -50%)", // Center the video within the container
-                    display: isPaused() && false ? "none" : "block", // Hide the video when paused
-                })}
-            >
-                <source src={videoSource} type='video/mp4' />
-                Your browser does not support the video tag.
-            </video>
-
-            {/* Custom pause icon */}
-            {isPaused() && (
-                <div
-                    onClick={toggleVideoPlayback}
-                    class={css({
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        fontSize: "36px",
-                        color: "white",
-                        zIndex: 1, // Ensure the icon is above the video
-                    })}
-                >
-                    <img src={diamondPause} />
-                </div>
-            )}
+          <img src={diamondPause} />
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 const WhatUglOffer = () => {
-    return (
-        <section
-            id='exposicao-de-jogos'
-            class={css({
-                ...flexCenter,
-                flexDir: "column",
-                minH: "730px",
-                w: "100%",
-                bgColor: "ugl-blue",
-                color: "white",
-                p: "20px",
-            })}
+  return (
+    <section
+      id="exposicao-de-jogos"
+      class={css({
+        ...flexCenter,
+        flexDir: 'column',
+        minH: '730px',
+        w: '100%',
+        bgColor: 'ugl-blue',
+        color: 'white',
+        p: { base: '32px 16px', md: '48px 24px', lg: '64px 32px' },
+      })}
+    >
+      <div
+        class={css({
+          ...flexCenter,
+          flexDir: { base: 'column', md: 'row' },
+          mb: { base: '48px', md: '64px' },
+          gap: { base: '24px', md: '32px' },
+        })}
+      >
+        <h2
+          class={css({
+            w: { base: '100%', sm: '55vw', md: '45vw', lg: '35vw' },
+            textStyle: 'h1',
+            color: 'white',
+            textAlign: { base: 'center', md: 'left' },
+            mb: { base: '32px', md: '0' },
+            mr: { base: '0', md: '32px' },
+          })}
         >
-            <div
-                class={css({
-                    ...flexCenter,
-                    flexDir: { base: "column", md: "row" },
-                    mb: { base: "30px", md: "50px" },
-                })}
-            >
-                <h2
-                    class={css({
-                        w: { base: "100%", sm: "55vw", md: "45vw", lg: "35vw" },
-                        textStyle: "barlowH2",
-                        fontSize: {
-                            base: "48px",
-                            sm: "54px",
-                            md: "58px",
-                            lg: "62px",
-                        },
-                        lineHeight: "49.6px",
-                        letterSpacing: "-1px",
-                        wordSpacing: "2px",
-                        mb: { base: "30px", md: "0" },
-                    })}
-                >
-                    TESTE OS JOGOS CRIADOS PELA GALERA DA USP E CONVIDADOS
-                </h2>
-                <_Video />
-            </div>
-            <div
-                class={css({
-                    ...flexCenter,
-                    flexDir: { base: "column", md: "row" },
-                })}
-            >
-                <_Topic>
-                    <h3>Acompanhe o desenvolvimento de projetos</h3>
-                    <p>
-                        Compreenda como são feitos os Brainstorms e os processos
-                        de Design na construção de um Game e sinta o gostinho de
-                        criar um novo universo de aventura e imaginação
-                    </p>
-                </_Topic>
-                <_Topic>
-                    <h3>Converse com os criadores</h3>
-                    <p>
-                        Troque ideias com toda galera envolvida no
-                        desenvolvimento de games. Converse com desenvolvedores,
-                        artistas, game designers, músicos e muitos outros.
-                    </p>
-                </_Topic>
-                <_Topic>
-                    <h3>Divirta-se jogando e testando</h3>
-                    <p>
-                        Entretenha-se jogando e testando os mais variados jogos
-                        nacionais do momento. Corra, atire, desvie, solucione e
-                        sobreviva as mais fantásticas experiências em Games.
-                    </p>
-                </_Topic>
-            </div>
-        </section>
-    );
+          TESTE OS JOGOS CRIADOS PELA GALERA DA USP E CONVIDADOS
+        </h2>
+        <_Video />
+      </div>
+      <div
+        class={css({
+          ...flexCenter,
+          flexDir: { base: 'column', lg: 'row' },
+          gap: { base: '24px', lg: '32px' },
+          flexWrap: 'wrap',
+        })}
+      >
+        <_Topic>
+          <h3>Acompanhe o desenvolvimento de projetos</h3>
+          <p>
+            Compreenda como são feitos os Brainstorms e os processos de Design
+            na construção de um Game e sinta o gostinho de criar um novo
+            universo de aventura e imaginação
+          </p>
+        </_Topic>
+        <_Topic>
+          <h3>Converse com os criadores</h3>
+          <p>
+            Troque ideias com toda galera envolvida no desenvolvimento de games.
+            Converse com desenvolvedores, artistas, game designers, músicos e
+            muitos outros.
+          </p>
+        </_Topic>
+        <_Topic>
+          <h3>Divirta-se jogando e testando</h3>
+          <p>
+            Entretenha-se jogando e testando os mais variados jogos nacionais do
+            momento. Corra, atire, desvie, solucione e sobreviva as mais
+            fantásticas experiências em Games.
+          </p>
+        </_Topic>
+      </div>
+    </section>
+  );
 };
 
 export default WhatUglOffer;

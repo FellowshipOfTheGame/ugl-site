@@ -203,7 +203,7 @@ interface PropertyValueTypes {
 	srOnly: boolean;
 	debug: boolean;
 	colorPalette: string;
-	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | "appBarFont" | "majorTitle" | "barlowH2" | "barlowH3" | "barlowP" | "barlowPSmall" | "barlowPThin" | "barlowStrong" | "guestName" | "guestJob";
+	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | "appBarFont" | "majorTitle" | "h1" | "h2" | "h3" | "bodyLarge" | "body" | "bodySmall" | "strong" | "guestName" | "guestJob" | "button" | "barlowH2" | "barlowH3" | "barlowP" | "barlowPSmall" | "barlowPThin" | "barlowStrong";
 }
 
 

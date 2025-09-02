@@ -8,7 +8,13 @@
     "prepare": "panda codegen",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "quick": "clear && npm run prepare && npm run dev"
+    "quick": "clear && pnpm run prepare && pnpm run dev",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "check-all": "pnpm run type-check && pnpm run lint && pnpm run format:check"
   },
   "dependencies": {
     "@fontsource/barlow": "^5.0.8",
@@ -19,7 +25,15 @@
     "solid-transition-group": "^0.2.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.34.0",
     "@pandacss/dev": "^0.15.1",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.6.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-solid": "^2.7.0"
