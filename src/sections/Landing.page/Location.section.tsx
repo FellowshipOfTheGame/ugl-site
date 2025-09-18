@@ -128,7 +128,7 @@ const LocationSection = () => {
         })}
       >
         {' '}
-        Auditório Fernão{' '}
+        Auditório Fernão{' '} <br />Vão da Biblioteca
       </h3>
       <_Text />
     </section>
