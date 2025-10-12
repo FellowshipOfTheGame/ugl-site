@@ -80,3 +80,6 @@ pnpm-workspace.yaml
 dist
 ugl-site.zip
 ugl.zip
+
+.DS_Store
+**/.DS_Store
