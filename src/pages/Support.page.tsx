@@ -6,7 +6,6 @@ import PointyA from '../components/PointyA';
 
 // Import sponsor logos
 import sebrae from '../assets/logos/sponsors/2025/sebrae.png';
-import gcacex from '../assets/logos/sponsors/2025/gcacex.png';
 import icmc from '../assets/logos/sponsors/2025/icmc.png';
 import fafq from '../assets/logos/sponsors/2025/fafq.png';
 
@@ -150,7 +149,7 @@ const SupportPage = () => {
             display: 'grid',
             gridTemplateColumns: {
               base: 'repeat(2, 1fr)',
-              md: 'repeat(4, 1fr)'
+              md: 'repeat(3, 1fr)'
             },
             gap: '40px',
             maxW: '800px',
@@ -181,22 +180,6 @@ const SupportPage = () => {
               })}
             />
           </a>
-
-          <img
-            src={gcacex}
-            alt="GCACEX"
-            class={css({
-              maxH: '80px',
-              maxW: '150px',
-              objectFit: 'contain',
-              filter: 'grayscale(0%)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                filter: 'grayscale(0%)',
-                transform: 'scale(1.05)',
-              },
-            })}
-          />
 
           <a
             href="https://www.icmc.usp.br"
