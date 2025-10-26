@@ -4,6 +4,12 @@ import { divider, vstack } from '../../styled-system/patterns';
 import photo from '../assets/images/foto_palestra_03.webp';
 import PointyA from '../components/PointyA';
 
+// Import sponsor logos
+import playbor from '../assets/logos/sponsors/2025/playbor.png';
+import gcacex from '../assets/logos/sponsors/2025/gcacex.png';
+import icmc from '../assets/logos/sponsors/2025/icmc.png';
+import fafq from '../assets/logos/sponsors/2025/fafq.png';
+
 const SupportPage = () => {
   return (
     <main
@@ -124,6 +130,120 @@ const SupportPage = () => {
           Apoie a UGL
         </PointyA>
         <div class={css({ mb: '50px', mt: '10px' })} />
+      </section>
+
+      {/* Sponsors section */}
+      <section class={vstack({ p: '20px', alignItems: 'center' })}>
+        <h2
+          class={css({
+            textStyle: 'h2',
+            color: 'ugl-purple',
+            mb: '40px',
+            textAlign: 'center',
+          })}
+        >
+          Nossos Apoiadores em 2025
+        </h2>
+
+        <div
+          class={css({
+            display: 'grid',
+            gridTemplateColumns: {
+              base: 'repeat(2, 1fr)',
+              md: 'repeat(4, 1fr)'
+            },
+            gap: '40px',
+            maxW: '800px',
+            alignItems: 'center',
+            justifyItems: 'center',
+            mb: '50px',
+          })}
+        >
+          <a
+            href="https://playbor.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={playbor}
+              alt="Playbor"
+              class={css({
+                maxH: '80px',
+                maxW: '150px',
+                objectFit: 'contain',
+                filter: 'grayscale(0%)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                '&:hover': {
+                  filter: 'grayscale(0%)',
+                  transform: 'scale(1.05)',
+                },
+              })}
+            />
+          </a>
+
+          <img
+            src={gcacex}
+            alt="GCACEX"
+            class={css({
+              maxH: '80px',
+              maxW: '150px',
+              objectFit: 'contain',
+              filter: 'grayscale(0%)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                filter: 'grayscale(0%)',
+                transform: 'scale(1.05)',
+              },
+            })}
+          />
+
+          <a
+            href="https://www.icmc.usp.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={icmc}
+              alt="ICMC"
+              class={css({
+                maxH: '80px',
+                maxW: '150px',
+                objectFit: 'contain',
+                filter: 'grayscale(0%)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                '&:hover': {
+                  filter: 'grayscale(0%)',
+                  transform: 'scale(1.05)',
+                },
+              })}
+            />
+          </a>
+
+          <a
+            href="https://www.fafq.org.br/convenio-usp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={fafq}
+              alt="FAFQ"
+              class={css({
+                maxH: '80px',
+                maxW: '150px',
+                objectFit: 'contain',
+                filter: 'grayscale(0%)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                '&:hover': {
+                  filter: 'grayscale(0%)',
+                  transform: 'scale(1.05)',
+                },
+              })}
+            />
+          </a>
+        </div>
       </section>
     </main>
   );
