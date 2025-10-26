@@ -207,7 +207,7 @@ export const guests: GuestType[] = [
   {
     name: "Mário Gazziro",
     title: "UFABC",
-    years: ["2023", "2024"],
+    years: ["2023", "2024", "2025"],
     img: marioGazziroPhoto,
     socials: [
       {
