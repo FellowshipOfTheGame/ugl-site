@@ -5,7 +5,7 @@ import photo from '../assets/images/foto_palestra_03.webp';
 import PointyA from '../components/PointyA';
 
 // Import sponsor logos
-import playbor from '../assets/logos/sponsors/2025/playbor.png';
+import sebrae from '../assets/logos/sponsors/2025/sebrae.png';
 import gcacex from '../assets/logos/sponsors/2025/gcacex.png';
 import icmc from '../assets/logos/sponsors/2025/icmc.png';
 import fafq from '../assets/logos/sponsors/2025/fafq.png';
@@ -160,13 +160,13 @@ const SupportPage = () => {
           })}
         >
           <a
-            href="https://playbor.com.br"
+            href="https://sebrae.com.br/sites/PortalSebrae/ufs/SP?codUf=26"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
-              src={playbor}
-              alt="Playbor"
+              src={sebrae}
+              alt="Sebrae"
               class={css({
                 maxH: '80px',
                 maxW: '150px',
