@@ -51,6 +51,7 @@ import thaisWeillerPhoto from "../assets/guests-images/2025/thais-weiller.jpeg";
 import liminalRoadPhoto from "../assets/guests-images/2025/liminal-road.jpg";
 import andreSanteePhoto from "../assets/guests-images/2025/andre-santee.jpeg";
 import kamilaRiosPhoto from "../assets/guests-images/2025/kamila-rios.jpeg";
+import playborLogo from "../assets/guests-images/2025/playbor.png";
 
 //============================================================================//
 //=================|    Types   |=============================================//
@@ -430,6 +431,18 @@ export const guests: GuestType[] = [
       {
         social: "LinkedIn",
         link: "https://www.linkedin.com/in/kamila-rios-h-rodrigues-1538b433/",
+      },
+    ],
+  },
+  {
+    name: "Playbor",
+    title: "Consultoria Especializada na Indústria de Games",
+    years: ["2025"],
+    img: playborLogo,
+    socials: [
+      {
+        social: "LinkedIn",
+        link: "https://www.linkedin.com/company/playbor/",
       },
     ],
   },
