@@ -72,6 +72,8 @@ jobs:
           SSHPASS: ${{ secrets.SSH_PASSWORD }}
         run: |
           # Upload the build archive
+          ip addr show
+          route -n
           sshpass -e scp -o StrictHostKeyChecking=no ugl.zip ${{ secrets.SSH_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/
           
           # Execute deployment commands on server
