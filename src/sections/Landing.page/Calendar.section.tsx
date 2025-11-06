@@ -6,7 +6,7 @@ import { flexCenter } from '../../styles/pieces/common.piece';
 // import calendar_2023_11_26 from "../../assets/images/cronograma/2023/cronograma-v2-2023-11-26.webp";
 // import general_calendar from "../../assets/images/cronograma/2023/cronograma-geral-v2.png";
 
-import comming_soon_calendar from '../../assets/images/cronograma/2025/ugl_cron_em_breve.png';
+//import comming_soon_calendar from '../../assets/images/cronograma/2025/ugl_cron_em_breve.png';
 import calendar from '../../assets/images/cronograma/2025/Cronograma_2025.png';
 
 const CalendarSection = () => {
