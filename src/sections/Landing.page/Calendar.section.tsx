@@ -7,7 +7,7 @@ import { flexCenter } from '../../styles/pieces/common.piece';
 // import general_calendar from "../../assets/images/cronograma/2023/cronograma-geral-v2.png";
 
 //import comming_soon_calendar from '../../assets/images/cronograma/2025/ugl_cron_em_breve.png';
-import calendar from '../../assets/images/cronograma/2025/Cronograma_2025.png';
+import calendar from '../../assets/images/cronograma/2025/Cronograma_2025.jpg';
 
 const CalendarSection = () => {
   return (
