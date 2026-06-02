@@ -10,3 +10,5 @@ export const UGLDate = moment
   .toISOString();
 // export const APP_ROOT = '/ugl';
 export const APP_ROOT = '/';
+
+export const EM_BREVE = true;
