@@ -3,7 +3,7 @@ import videoSource from '../../assets/videos/ugl-opening-01.mp4';
 import foguinho3 from '../../assets/foguinho/FoGuinho3.webp';
 
 import { flexCenter, maxSize } from '../../styles/pieces/common.piece';
-import { UGLDate } from '../../utils/constants';
+import { EM_BREVE, UGLDate } from '../../utils/constants';
 import { createSignal, onCleanup } from 'solid-js';
 
 const targetDate = new Date(UGLDate);
@@ -307,12 +307,14 @@ const _EyeCatcherOverlay = () => {
         </p>
       </div>
 
-      <div
-        class={css({
-          ...flexCenter,
-          color: 'ugl-orange',
-          textStyle: 'majorTitle',
-          fontSize: { base: '24px', sm: '28px', md: '32px', lg: '36px' },
+      {!EM_BREVE && 
+      <div>
+        <div
+          class={css({
+            ...flexCenter,
+            color: 'ugl-orange',
+            textStyle: 'majorTitle',
+            fontSize: { base: '24px', sm: '28px', md: '32px', lg: '36px' },
           lineHeight: { base: '28px', sm: '32px', md: '36px', lg: '40px' },
           marginBottom: { base: '20px', md: '25px' },
           textAlign: 'center',
@@ -356,6 +358,8 @@ const _EyeCatcherOverlay = () => {
       >
         <_TimeLeft />
       </div>
+      </div>
+      }
     </div>
   );
 };
