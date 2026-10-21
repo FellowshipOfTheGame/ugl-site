@@ -7,7 +7,7 @@ import { flexCenter } from '../../styles/pieces/common.piece';
 // import general_calendar from "../../assets/images/cronograma/2023/cronograma-geral-v2.png";
 
 import comming_soon_calendar from '../../assets/images/cronograma/ugl_cron_em_breve.png';
-import calendar from '../../assets/images/cronograma/cronograma.jpg';
+import calendar from '../../assets/images/cronograma/cronograma.png';
 
 import { EM_BREVE } from '../../utils/constants';
 

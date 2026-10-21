@@ -3,7 +3,7 @@ import videoSource from '../../assets/videos/ugl-opening-01.mp4';
 import foguinho3 from '../../assets/foguinho/FoGuinho3.webp';
 
 import { flexCenter, maxSize } from '../../styles/pieces/common.piece';
-import { EM_BREVE, UGLDate } from '../../utils/constants';
+import { SHOW_DATE, UGLDate, UGLDatePortuguese } from '../../utils/constants';
 import { createSignal, onCleanup } from 'solid-js';
 
 const targetDate = new Date(UGLDate);
@@ -307,8 +307,15 @@ const _EyeCatcherOverlay = () => {
         </p>
       </div>
 
-      {!EM_BREVE && 
-      <div>
+      {SHOW_DATE && 
+      <div
+        class={css({
+          display: { base: 'flex', md: 'block' },
+          flexDir: 'column',
+          alignItems: 'center',
+          width: { base: '100%', md: 'auto' },
+        })}
+      >
         <div
           class={css({
             ...flexCenter,
@@ -333,7 +340,7 @@ const _EyeCatcherOverlay = () => {
           },
         })}
       >
-        07 a 09 de Novembro
+        {UGLDatePortuguese}
       </div>
 
       <div
@@ -345,7 +352,7 @@ const _EyeCatcherOverlay = () => {
           borderRadius: '20px',
           mb: { base: '20px', md: '40px' },
           width: {
-            base: '88%',
+            base: '96%',
             sm: '86%',
             md: '82%',
             lg: '88%',
