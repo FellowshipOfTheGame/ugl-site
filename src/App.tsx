@@ -24,7 +24,7 @@ function App() {
         pt: { base: '80px', md: '100px' },
       })}
     >
-      <Router>
+       <Router base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <Routes>
           <Route path={'/'} component={Layout}>
             <Route path="/" component={LandingPage} />
