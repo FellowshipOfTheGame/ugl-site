@@ -9,6 +9,8 @@ import instagramIcon from "../assets/icons/instagram-icon.webp";
 import xIcon from "../assets/icons/x-icon.png";
 import coconut from "../assets/icons/coconut.webp";
 
+import generatedSheetGuests from "./guests.sheet.json";
+
 // 2022
 import giovannaFranchiniPhoto from "../assets/guests-images/2022/giovanna-franchini.webp";
 import leonardoChieppePhoto from "../assets/guests-images/2022/leonardo-chieppe.webp";
@@ -57,9 +59,7 @@ import playborLogo from "../assets/guests-images/2025/playbor.png";
 //=================|    Types   |=============================================//
 //============================================================================//
 
-export type YearType = "2025" | "2024" | "2023" | "2022" | "2021" | "2020";
 export type SocialNetwork = "X" | "Instagram" | "LinkedIn";
-export const years: YearType[] = ["2025", "2024", "2023", "2022"];
 
 export interface GuestType {
   name: string;
@@ -67,6 +67,16 @@ export interface GuestType {
   years: string[];
   img: string;
   alt?: string; // NOTE: the text `Foto retrato de {NOME}` will be used if alt is undefined.
+  email?: string;
+  socials?: { social: SocialNetwork; link: string }[];
+}
+
+interface SheetGuestType {
+  name: string;
+  title: string;
+  years: string[];
+  img?: string;
+  email?: string;
   socials?: { social: SocialNetwork; link: string }[];
 }
 
@@ -91,7 +101,7 @@ export function getSocialNetLogos(socialNetName: SocialNetwork) {
 //=================|    Data    |=============================================//
 //============================================================================//
 
-export const guests: GuestType[] = [
+const localGuests: GuestType[] = [
   {
     name: "Vem Aí!",
     title: "Em breve!",
@@ -448,23 +458,115 @@ export const guests: GuestType[] = [
   },
 ];
 
-// NOTE (b): is this the best way to do this? No. Is it peformant? No. Howerver,
-//  i doubt we need such levels of peformance anyways, and this notation will
-//  save dev time.
-const __guests_per_year: { year: string; guests: GuestType[] }[] = [];
+//============================================================================//
+//=================|    Google Sheets guests     |============================//
+//============================================================================//
 
-years.forEach((y: string) => {
-  const __this_year: { year: string; guests: GuestType[] } = {
-    year: y,
-    guests: [],
-  };
+const localGuestImages = import.meta.glob<string>(
+  "../assets/guests-images/**/*.{webp,png,jpg,jpeg,gif}",
+  { eager: true, import: "default" }
+);
 
-  guests.forEach((g: GuestType) => {
-    if (g["years"].includes(y)) __this_year.guests.push(g);
-  });
+const localGuestImagesByPath = new Map(
+  Object.entries(localGuestImages).map(([path, src]) => [
+    path.replace("../assets/guests-images/", ""),
+    src,
+  ])
+);
 
-  __guests_per_year.push(__this_year);
+const localGuestImagesByName = new Map<string, string>();
+Object.entries(localGuestImages).forEach(([path, src]) => {
+  const fileName = path.split("/").pop();
+  if (fileName && !localGuestImagesByName.has(fileName)) {
+    localGuestImagesByName.set(fileName, src);
+  }
 });
 
+function resolveGuestImage(img?: string): string | undefined {
+  if (!img) return undefined;
+  if (/^https?:\/\//i.test(img)) return img;
+
+  const path = img
+    .replace(/^\/+/, "")
+    .replace(/^src\/assets\/guests-images\//, "");
+  return (
+    localGuestImagesByPath.get(path) ??
+    localGuestImagesByName.get(path.split("/").pop() ?? "")
+  );
+}
+
+const sheetGuestsData = generatedSheetGuests as unknown as SheetGuestType[];
+
+const sheetGuests: SheetGuestType[] = sheetGuestsData.map(guest => ({
+  name: guest.name,
+  title: guest.title ?? "",
+  years: guest.years,
+  img: resolveGuestImage(guest.img),
+  email: guest.email,
+  socials: guest.socials?.map(social => ({
+    social: social.social as SocialNetwork,
+    link: social.link,
+  })),
+}));
+
+const guestKey = (name: string) =>
+  name
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+const mergedGuests: GuestType[] = [...localGuests];
+const appendedSheetGuests: GuestType[] = [];
+
+sheetGuests.forEach(guest => {
+  const key = guestKey(guest.name);
+  const localIndex = mergedGuests.findIndex(
+    local =>
+      guestKey(local.name) === key &&
+      local.years.some(year => guest.years.includes(year))
+  );
+  const local = localIndex >= 0 ? mergedGuests[localIndex] : undefined;
+  const image = guest.img ?? local?.img;
+
+  const merged: GuestType = {
+    name: guest.name,
+    title: guest.title || local?.title || "",
+    years: [...new Set([...(local?.years ?? []), ...guest.years])].sort(
+      (a, b) => Number(a) - Number(b)
+    ),
+    img: image ?? genteChegando,
+    alt:
+      local?.alt ??
+      (image
+        ? undefined
+        : "Imagem contendo o texto estilizado 'tem gente chegando'."),
+    email: guest.email ?? local?.email,
+    socials:
+      guest.socials && guest.socials.length > 0
+        ? guest.socials
+        : local?.socials,
+  };
+
+  if (localIndex >= 0) {
+    mergedGuests[localIndex] = merged;
+  } else {
+    appendedSheetGuests.push(merged);
+  }
+});
+
+export const guests: GuestType[] = [...mergedGuests, ...appendedSheetGuests];
+
+//============================================================================//
+//=================|    Group guests by year     |============================//
+//============================================================================//
+
+export const years: string[] = [...new Set(guests.flatMap(g => g.years))].sort(
+  (a, b) => Number(b) - Number(a)
+);
+
 export const guests_per_year: { year: string; guests: GuestType[] }[] =
-  __guests_per_year;
+  years.map(year => ({
+    year,
+    guests: guests.filter(guest => guest.years.includes(year)),
+  }));

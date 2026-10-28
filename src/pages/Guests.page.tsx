@@ -9,51 +9,80 @@ import { circle, grid } from '../../styled-system/patterns';
 import { css } from '../../styled-system/css';
 import { flexCenter } from '../styles/pieces/common.piece';
 import { Transition } from 'solid-transition-group';
+import emailIcon from '../assets/icons/email-icon.svg';
 
-const _Socials = (props: {
-  socials?: { social: SocialNetwork; link: string }[];
-  guestName: string;
+const _SocialLink = (props: {
+  href: string;
+  icon: string;
+  alt: string;
+  newTab?: boolean;
 }) => {
   const size = { base: '20px', md: '28px' };
   return (
-    <Show when={props.socials}>
-      <For each={props.socials}>
-        {(s: { social: SocialNetwork; link: string }) => (
-          <li>
-            <a
+    <li>
+      <a
+        href={props.href}
+        target={props.newTab === false ? undefined : '_blank'}
+        class={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          w: { base: '32px', md: '40px' },
+          h: { base: '32px', md: '40px' },
+          borderRadius: '12px',
+          background: 'rgba(40, 44, 100, 0.1)',
+          backdropFilter: 'blur(5px)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          _hover: {
+            background: 'rgba(247, 148, 33, 0.2)',
+            transform: 'translateY(-2px) scale(1.1)',
+            boxShadow: '0 6px 20px rgba(247, 148, 33, 0.3)',
+          },
+        })}
+      >
+        <img
+          src={props.icon}
+          alt={props.alt}
+          class={css({
+            w: size,
+            h: size,
+            borderRadius: '8px',
+          })}
+        />
+      </a>
+    </li>
+  );
+};
+
+const _Socials = (props: {
+  socials?: { social: SocialNetwork; link: string }[];
+  email?: string;
+  guestName: string;
+}) => {
+  return (
+    <>
+      <Show when={props.socials}>
+        <For each={props.socials}>
+          {(s: { social: SocialNetwork; link: string }) => (
+            <_SocialLink
               href={s.link}
-              target="_blank"
-              class={css({
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                w: { base: '32px', md: '40px' },
-                h: { base: '32px', md: '40px' },
-                borderRadius: '12px',
-                background: 'rgba(40, 44, 100, 0.1)',
-                backdropFilter: 'blur(5px)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                _hover: {
-                  background: 'rgba(247, 148, 33, 0.2)',
-                  transform: 'translateY(-2px) scale(1.1)',
-                  boxShadow: '0 6px 20px rgba(247, 148, 33, 0.3)',
-                },
-              })}
-            >
-              <img
-                src={getSocialNetLogos(s.social)}
-                alt={`Link para o ${s.social} de ${props.guestName}.`}
-                class={css({
-                  w: size,
-                  h: size,
-                  borderRadius: '8px',
-                })}
-              />
-            </a>
-          </li>
+              icon={getSocialNetLogos(s.social)}
+              alt={`Link para o ${s.social} de ${props.guestName}.`}
+            />
+          )}
+        </For>
+      </Show>
+      <Show when={props.email}>
+        {email => (
+          <_SocialLink
+            href={`mailto:${email()}`}
+            icon={emailIcon}
+            alt={`Link para o email de ${props.guestName}.`}
+            newTab={false}
+          />
         )}
-      </For>
-    </Show>
+      </Show>
+    </>
   );
 };
 
@@ -98,7 +127,9 @@ const _Guest = (props: { guestData: GuestType }) => {
           })}
         />
         <Show
-          when={props.guestData.socials && props.guestData.socials.length > 0}
+          when={
+            (props.guestData.socials?.length ?? 0) > 0 || props.guestData.email
+          }
         >
           <ul
             class={css({
@@ -117,6 +148,7 @@ const _Guest = (props: { guestData: GuestType }) => {
           >
             <_Socials
               socials={props.guestData.socials}
+              email={props.guestData.email}
               guestName={props.guestData.name}
             />
           </ul>

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Re-G3X",
+    "title": "Grupo de Pesquisa em Jogos",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/re-g3x.jpg",
+    "socials": [
+      {
+        "social": "Instagram",
+        "link": "https://www.instagram.com/leonardotphd/"
+      }
+    ]
+  },
+  {
+    "name": "Herberth",
+    "title": "Game Designer",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/herberth.jpg",
+    "email": "herbherth@gmail.com"
+  },
+  {
+    "name": "Alessandro Franzen",
+    "title": "Designer",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/alessandro-franzen.jpg",
+    "email": "alessandrofranzen@yahoo.com.br",
+    "socials": [
+      {
+        "social": "LinkedIn",
+        "link": "https://www.linkedin.com/in/alessandro-franzen45bb2ab"
+      }
+    ]
+  },
+  {
+    "name": "Livia Scienza",
+    "title": "Game UX & Empathy Researcher",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/livia-scienza.jpg",
+    "email": "contato.scienza@gmail.com",
+    "socials": [
+      {
+        "social": "LinkedIn",
+        "link": "https://www.linkedin.com/in/liviascienza/"
+      }
+    ]
+  },
+  {
+    "name": "Fernando Araújo",
+    "title": "Indie Game Developer",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/fernando-araujo.jpg",
+    "socials": [
+      {
+        "social": "LinkedIn",
+        "link": "https://www.linkedin.com/in/fernando-gamedev/"
+      },
+      {
+        "social": "Instagram",
+        "link": "https://www.instagram.com/inkeye.gamedev/"
+      }
+    ]
+  },
+  {
+    "name": "Fabian Czajkowski",
+    "title": "Game Designer",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/fabian-czajkowski.jpg",
+    "email": "fabian.gamedesigner@gmail.com",
+    "socials": [
+      {
+        "social": "LinkedIn",
+        "link": "https://linkedin.com/in/fabiancza"
+      }
+    ]
+  },
+  {
+    "name": "Juliana Destefani",
+    "title": "Lead 3D Character Artist",
+    "years": [
+      "2026"
+    ],
+    "img": "2026/juliana-destefani.jpg",
+    "socials": [
+      {
+        "social": "LinkedIn",
+        "link": "https://www.linkedin.com/in/juliana-destefani-876330168/"
+      }
+    ]
+  }
+]

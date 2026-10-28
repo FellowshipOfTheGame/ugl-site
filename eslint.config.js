@@ -7,6 +7,19 @@ import prettier from 'eslint-config-prettier';
 export default [
   js.configs.recommended,
   {
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        AbortSignal: 'readonly',
+        console: 'readonly',
+        fetch: 'readonly',
+        process: 'readonly',
+        TextDecoder: 'readonly',
+        URL: 'readonly',
+      },
+    },
+  },
+  {
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: typescriptParser,

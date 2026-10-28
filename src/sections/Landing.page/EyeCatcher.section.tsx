@@ -351,6 +351,7 @@ const _EyeCatcherOverlay = () => {
           border: '1px solid rgba(255, 255, 255, 0.1)',
           borderRadius: '20px',
           mb: { base: '20px', md: '40px' },
+          mx: 'auto',
           width: {
             base: '96%',
             sm: '86%',
